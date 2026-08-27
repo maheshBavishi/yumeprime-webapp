@@ -1,0 +1,164 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.foursteps {
+    padding: 96px 0;
+
+    @include respond-to("tab") {
+        padding: 60px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 60px 0 0 0;
+    }
+
+    .sectionHeader {
+        display: flex;
+        padding: 0 0 65px 0;
+        align-items: center;
+        justify-content: space-between;
+        gap: 32px;
+
+        @include respond-to("tab") {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            padding-bottom: 40px;
+        }
+
+        h2 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 64px;
+            font-weight: 400;
+            font-family: "BeVietnam-Regular", sans-serif;
+            line-height: 90%;
+            max-width: 418px;
+            letter-spacing: -3.2px;
+            margin: 0;
+
+            @include respond-to("lg") {
+                font-size: 52px;
+                letter-spacing: -2.6px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 40px;
+                letter-spacing: -2px;
+                max-width: 100%;
+            }
+
+            @include respond-to("sm") {
+                font-size: 32px;
+                letter-spacing: -1.6px;
+            }
+        }
+
+        .buttonAlignment {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 551px 1fr;
+        gap: 0px;
+        border-top: 1px solid rgba(11, 22, 56, 0.08);
+
+        @include respond-to("lg") {
+            grid-template-columns: 1fr 380px 1fr;
+        }
+
+        @include respond-to("tab") {
+            grid-template-columns: 1fr;
+            border-top: none;
+            gap: 20px;
+        }
+
+        @include respond-to("sm") {
+            gap: 0px;
+        }
+
+        .items {
+            &:nth-child(2) {
+                background: rgba(11, 22, 56, 0.05);
+                height: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: center;
+                border-radius: 4px;
+
+                @include respond-to("tab") {
+                    order: -1;
+                    padding: 40px 20px 0 20px;
+                }
+
+                img {
+                    display: block;
+                    max-width: 360px;
+                    width: 100%;
+                    height: auto;
+
+                    @include respond-to("lg") {
+                        max-width: 280px;
+                    }
+
+                    @include respond-to("sm") {
+                        max-width: 240px;
+                    }
+                }
+            }
+
+            .box {
+                height: 150px;
+                border-bottom: 1px solid rgba(11, 22, 56, 0.05);
+
+                @include respond-to("tab") {
+                    display: none;
+                }
+            }
+
+            .textBox {
+                padding: 34px 40px;
+                border-bottom: 1px solid rgba(11, 22, 56, 0.08);
+                background: #FFFFFF;
+
+                @include respond-to("tab") {
+                    padding: 24px 20px;
+                    border: 1px solid rgba(11, 22, 56, 0.08);
+                    border-radius: 4px;
+                    margin-bottom: 16px;
+                }
+
+                h3 {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 18px;
+                    font-family: "BeVietnam-Medium", sans-serif;
+                    font-weight: 500;
+                    margin: 0 0 16px 0;
+                    line-height: normal;
+
+                    @include respond-to("sm") {
+                        font-size: 17px;
+                    }
+                }
+
+                p {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 16px;
+                    font-family: var(--font-inter-tight), sans-serif;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    margin: 0;
+                    opacity: 0.8;
+
+                    @include respond-to("sm") {
+                        font-size: 14.5px;
+                    }
+                }
+            }
+        }
+    }
+}

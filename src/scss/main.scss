@@ -1,0 +1,26 @@
+@use 'breakpoints/breakpoints.scss' as *;
+
+@font-face {
+    font-family: "BeVietnam-Bold";
+    src: url("/assets/font/BeVietnam-Bold.ttf");
+}
+
+@font-face {
+    font-family: "BeVietnam-ExtraBold";
+    src: url("/assets/font/BeVietnam-ExtraBold.ttf");
+}
+
+@font-face {
+    font-family: "BeVietnam-Medium";
+    src: url("/assets/font/BeVietnam-Medium.ttf");
+}
+
+@font-face {
+    font-family: "BeVietnam-Regular";
+    src: url("/assets/font/BeVietnam-Regular.ttf");
+}
+
+@font-face {
+    font-family: "BeVietnam-ThinItalic";
+    src: url("../../public/assets/font/BeVietnam-ThinItalic.ttf");
+}

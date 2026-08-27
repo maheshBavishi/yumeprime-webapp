@@ -1,0 +1,91 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.cardSection {
+    position: relative;
+    margin-top: -140px;
+
+    @include respond-to("lg") {
+        margin-top: -100px;
+    }
+
+    @include respond-to("tab") {
+        margin-top: -60px;
+    }
+
+    @include respond-to("sm") {
+        margin-top: -40px;
+    }
+
+    .grid {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include respond-to("lg") {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        @include respond-to("tab") {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+
+            .imageWrapper {
+                width: 100%;
+                will-change: transform;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    will-change: transform;
+                }
+            }
+
+            .details {
+                padding: 16px 0 0 0;
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+
+                h3 {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 20px;
+                    font-family: "BeVietnam-Medium", sans-serif;
+                    font-weight: 500;
+                    line-height: normal;
+                    transition: color 0.25s ease;
+                }
+
+                p {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.5;
+                    opacity: 0.7;
+                    margin: 14px 0 24px 0;
+                    flex-grow: 1;
+                }
+
+                .buttonWrapper {
+                    margin-top: auto;
+                    display: inline-block;
+                    width: fit-content;
+                }
+            }
+        }
+    }
+}

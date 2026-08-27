@@ -1,0 +1,80 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.sliderAnimation {
+    padding: 24px 0;
+    background: linear-gradient(90deg, #C59E63 0%, #E3D0A9 100%);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    .marqueeTrack {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+        user-select: none;
+    }
+
+    .marqueeGroup {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        gap: 40px;
+        padding-right: 40px;
+        white-space: nowrap;
+    }
+
+    .dotIconText {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        flex-shrink: 0;
+
+        .dot {
+            width: 4px;
+            height: 4px;
+            background-color: #F7F4EC;
+            opacity: 0.35;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+    }
+
+    .iconText {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-shrink: 0;
+
+        svg {
+            flex-shrink: 0;
+            display: block;
+        }
+
+        p {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 14px;
+            font-weight: 700;
+            line-height: normal;
+            letter-spacing: 0.7px;
+            text-transform: uppercase;
+            margin: 0;
+            white-space: nowrap;
+
+            strong {
+                color: var(--Midnight-Navy, #0B1638);
+                font-weight: 700;
+            }
+
+            span {
+                color: rgba(11, 22, 56, 0.50);
+                font-weight: 400;
+                line-height: normal;
+                letter-spacing: 0.7px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}

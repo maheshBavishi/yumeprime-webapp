@@ -1,0 +1,62 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.visionSection {
+    padding: 120px 0;
+
+    @include respond-to("tab") {
+        padding: 70px 0;
+    }
+
+    h2 {
+        color: var(--Midnight-Navy, #0B1638);
+        text-align: center;
+        font-size: 96px;
+        font-weight: 400;
+        line-height: 90%;
+        letter-spacing: -4.8px;
+        font-family: "BeVietnam-Regular", sans-serif;
+
+        @include respond-to("lg") {
+            font-size: 72px;
+            letter-spacing: -3.6px;
+        }
+
+        @include respond-to("tab") {
+            font-size: 48px;
+            letter-spacing: -2.4px;
+        }
+
+        @include respond-to("sm") {
+            font-size: 34px;
+            letter-spacing: -1.7px;
+        }
+
+        span {
+            font-style: italic;
+            font-family: "BeVietnam-ThinItalic", sans-serif;
+            font-weight: 250;
+            line-height: 90%;
+            letter-spacing: -4.8px;
+
+            @include respond-to("lg") {
+                letter-spacing: -3.6px;
+            }
+
+            @include respond-to("tab") {
+                letter-spacing: -2.4px;
+            }
+
+            @include respond-to("sm") {
+                letter-spacing: -1.7px;
+            }
+        }
+    }
+
+    .center {
+        padding: 40px 0 0 0;
+        display: flex;
+        justify-content: center;
+        user-select: none;
+    }
+}

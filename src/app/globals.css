@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+p:last-child {
+  margin: 0;
+}
+
+body,
+input,
+::placeholder,
+button {
+  font-family: var(--font-inter-tight);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.container-lg {
+  max-width: calc(1480px + 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: calc(1440px + 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}

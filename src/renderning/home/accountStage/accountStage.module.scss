@@ -1,0 +1,338 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.accountStage {
+    padding: 96px 0;
+    background-color: #FFFFFF;
+
+    @include respond-to("tab") {
+        padding: 60px 0;
+    }
+
+    .sectionHeader {
+        padding: 0 0 65px 0;
+
+        @include respond-to("tab") {
+            padding: 0 0 36px 0;
+        }
+
+        h2 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 64px;
+            font-family: "BeVietnam-Regular", sans-serif;
+            max-width: 500px;
+            font-weight: 400;
+            line-height: 95%;
+            letter-spacing: -3.2px;
+            margin: 0;
+
+            @include respond-to("lg") {
+                font-size: 52px;
+                letter-spacing: -2.6px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 40px;
+                letter-spacing: -2px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 32px;
+                letter-spacing: -1.5px;
+            }
+        }
+    }
+
+    .buttonTop {
+        padding: 28px 0 0 0;
+        display: flex;
+
+        @include respond-to("sm") {
+            padding-top: 20px;
+
+            > div {
+                width: 100%;
+                display: flex;
+
+                button {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    .flexBox {
+        width: 100%;
+    }
+
+    .tableWrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 16px;
+
+        &::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #F1F4F8;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+    }
+
+    .comparisonTable {
+        width: 100%;
+        min-width: 920px;
+
+        .headerRow {
+            display: grid;
+            grid-template-columns: 300px 1fr 1fr 1.05fr;
+            gap: 12px;
+
+            @include respond-to("lg") {
+                grid-template-columns: 240px 210px 210px 230px;
+                gap: 10px;
+            }
+
+            @include respond-to("tab") {
+                grid-template-columns: 200px 210px 210px 230px;
+                gap: 10px;
+            }
+
+            .cell {
+                padding: 30px 24px;
+                border-bottom: 2px solid #0B1638;
+
+                @include respond-to("tab") {
+                    padding: 24px 20px;
+                }
+
+                @include respond-to("sm") {
+                    padding: 20px 16px;
+                }
+            }
+
+            .labelHeaderCell {
+                background: #FFFFFF;
+                border: none;
+                border-bottom: 2px solid #0B1638;
+
+                @include respond-to("tab") {
+                    position: sticky;
+                    left: 0;
+                    z-index: 5;
+                    box-shadow: 3px 0 8px rgba(11, 22, 56, 0.08);
+                }
+            }
+
+            .standardHeaderCell,
+            .plusHeaderCell {
+                background: #F7F9FC;
+                position: relative;
+                border-right: 1px solid #DFE5EB;
+
+                .planTitle {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 32px;
+                    font-weight: 500;
+                    font-family: "BeVietnam-Medium", sans-serif;
+                    line-height: 90%;
+                    letter-spacing: -1.6px;
+                    margin: 0;
+
+                    @include respond-to("tab") {
+                        font-size: 26px;
+                        letter-spacing: -1.2px;
+                    }
+                }
+            }
+
+            .plusHeaderCell {
+                border-right: 1px solid #DFE5EB;
+            }
+
+            .proHeaderCell {
+                background: var(--Gradient, linear-gradient(180deg, #C59E63 0%, #E3D0A9 100%));
+                padding: 30px 24px;
+                position: relative;
+
+                @include respond-to("tab") {
+                    padding: 24px 20px;
+                }
+
+                .popularBadge {
+                    position: absolute;
+                    top: 0;
+                    right: 8px;
+                    background: var(--Midnight-Navy, #0B1638);
+                    color: #C59E63;
+                    font-size: 13px;
+                    padding: 6px 14px;
+                    font-weight: 700;
+                    letter-spacing: 0.65px;
+                    text-transform: uppercase;
+
+                    @include respond-to("tab") {
+                        font-size: 11px;
+                        padding: 4px 10px;
+                        right: 6px;
+                    }
+                }
+
+                .planTitle {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 38px;
+                    font-family: "BeVietnam-Regular", sans-serif;
+                    font-weight: 400;
+                    line-height: 1.1;
+                    letter-spacing: -1.5px;
+                    margin: 0;
+
+                    @include respond-to("tab") {
+                        font-size: 30px;
+                        letter-spacing: -1.2px;
+                    }
+                }
+            }
+        }
+
+        .dataRow {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: 300px 1fr 1fr 1.05fr;
+
+            @include respond-to("lg") {
+                grid-template-columns: 240px 210px 210px 230px;
+                gap: 10px;
+            }
+
+            @include respond-to("tab") {
+                grid-template-columns: 200px 210px 210px 230px;
+                gap: 10px;
+            }
+
+            .cell {
+                display: flex;
+                align-items: center;
+                padding: 16px 20px;
+                box-sizing: border-box;
+
+                @include respond-to("tab") {
+                    padding: 14px 18px;
+                }
+
+                .checkIcon {
+                    display: inline-block;
+                    flex-shrink: 0;
+                }
+            }
+
+            .labelCell {
+                background: #FFFFFF;
+                padding: 16px 20px;
+                border-bottom: 1px solid rgba(11, 22, 56, 0.10);
+
+                @include respond-to("tab") {
+                    position: sticky;
+                    left: 0;
+                    z-index: 4;
+                    padding: 14px 16px;
+                    box-shadow: 3px 0 8px rgba(11, 22, 56, 0.08);
+                }
+
+                span {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 13px;
+                    opacity: 0.65;
+                    font-weight: 600;
+                    display: block;
+                    line-height: 1.35;
+                    letter-spacing: 1.1px;
+                    text-transform: uppercase;
+
+                    @include respond-to("tab") {
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            .standardCell {
+                background: #F7F9FC;
+                color: var(--Midnight-Navy, #0B1638);
+                font-size: 15px;
+                font-family: var(--font-inter-tight), sans-serif;
+                font-weight: 500;
+                line-height: 1.4;
+                border-bottom: 1px solid #E8ECF0;
+                border-right: 1px solid #DFE5EB;
+
+                @include respond-to("tab") {
+                    font-size: 14px;
+                }
+
+                .checkIcon {
+                    color: var(--Midnight-Navy, #0B1638);
+                }
+            }
+
+            .plusCell {
+                background: #F7F9FC;
+                color: var(--Midnight-Navy, #0B1638);
+                font-size: 15px;
+                font-family: var(--font-inter-tight), sans-serif;
+                font-weight: 500;
+                line-height: 1.4;
+                border-bottom: 1px solid #E8ECF0;
+                border-right: 1px solid #DFE5EB;
+
+                @include respond-to("tab") {
+                    font-size: 14px;
+                }
+
+                .checkIcon {
+                    color: var(--Midnight-Navy, #0B1638);
+                }
+            }
+
+            .proCell {
+                background: var(--Midnight-Navy, #0B1638);
+                color: #FFFFFF;
+                font-size: 14.5px;
+                font-family: "BeVietnam-Regular", sans-serif;
+                font-weight: 400;
+                line-height: 1.45;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+                @include respond-to("tab") {
+                    font-size: 14px;
+                    line-height: 1.4;
+                }
+
+                .checkIcon {
+                    color: #FFFFFF;
+                }
+            }
+
+            &:last-child {
+                .labelCell {
+                    border-bottom: none !important;
+                }
+
+                .labelCell,
+                .standardCell,
+                .plusCell,
+                .proCell {
+                    border-bottom: 2px solid #0B1638;
+                }
+            }
+        }
+    }
+}
+

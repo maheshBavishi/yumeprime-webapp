@@ -1,0 +1,195 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.herobanner {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    position: relative;
+    overflow: hidden;
+    background: url('/assets/images/hero.png'), #0B1638;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include respond-to("tab") {
+        background-position: center 15%;
+        padding-top: 100px;
+    }
+
+    /* Mobile / Tablet Contrast Scrim to make text 100% crisp & readable */
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, 
+            rgba(11, 22, 56, 0.15) 0%, 
+            rgba(11, 22, 56, 0.45) 35%, 
+            rgba(11, 22, 56, 0.88) 65%, 
+            rgba(11, 22, 56, 0.98) 100%
+        );
+        pointer-events: none;
+        z-index: 1;
+        display: none;
+
+        @include respond-to("tab") {
+            display: block;
+        }
+    }
+
+    .rightIcon {
+        position: absolute;
+        top: 48%;
+        transform: translateY(-50%);
+        right: 0;
+        z-index: 2;
+
+        @include respond-to("lg") {
+            display: none;
+        }
+
+        img {
+            display: block;
+            max-width: 140px;
+            user-select: none;
+        }
+    }
+
+    .bottomContent {
+        width: 100%;
+        position: relative;
+        z-index: 3;
+
+        .leftSpacing {
+            padding: 0 64px 56px 64px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: 40px;
+
+            @media (max-width: 1400px) {
+                padding: 0 40px 48px 40px;
+                gap: 32px;
+            }
+
+            @include respond-to("tab") {
+                padding: 40px 20px 36px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 28px;
+            }
+
+            h1 {
+                color: var(--Ivory-White, #F7F4EC);
+                font-size: 96px;
+                font-weight: 400;
+                font-family: "BeVietnam-Regular", sans-serif;
+                max-width: 636px;
+                line-height: 90%;
+                letter-spacing: -4.8px;
+                margin: 0;
+
+                @include respond-to("lg") {
+                    font-size: 72px;
+                    letter-spacing: -3.6px;
+                    max-width: 480px;
+                }
+
+                @include respond-to("tab") {
+                    font-size: 48px;
+                    letter-spacing: -2.4px;
+                    line-height: 96%;
+                    max-width: 100%;
+                    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+                }
+
+                @include respond-to("sm") {
+                    font-size: 36px;
+                    letter-spacing: -1.6px;
+                    line-height: 100%;
+                    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+                }
+
+                span {
+                    font-style: italic;
+                    font-weight: 250;
+                    line-height: 90%;
+                    letter-spacing: -4.8px;
+                    font-family: "BeVietnam-ThinItalic", sans-serif;
+
+                    @include respond-to("lg") {
+                        letter-spacing: -3.6px;
+                    }
+
+                    @include respond-to("tab") {
+                        letter-spacing: -2.4px;
+                    }
+
+                    @include respond-to("sm") {
+                        letter-spacing: -1.6px;
+                    }
+                }
+            }
+
+            .contentRight {
+                max-width: 497px;
+
+                @include respond-to("tab") {
+                    max-width: 100%;
+                    width: 100%;
+                }
+            }
+
+            p {
+                color: var(--Ivory-White, #F7F4EC);
+                font-size: 18px;
+                font-family: var(--font-inter-tight), sans-serif;
+                max-width: 497px;
+                font-weight: 500;
+                margin: 0 0 32px 0;
+                line-height: 1.5;
+
+                @include respond-to("tab") {
+                    font-size: 15.5px;
+                    margin-bottom: 24px;
+                    line-height: 1.55;
+                    opacity: 0.92;
+                    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+                }
+
+                @include respond-to("sm") {
+                    font-size: 14.5px;
+                }
+            }
+
+            .buttonAlignment {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                flex-wrap: wrap;
+
+                @include respond-to("tab") {
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 12px;
+
+                    > div {
+                        width: 100%;
+                        display: flex;
+
+                        button {
+                            width: 100%;
+                            justify-content: center;
+                            padding: 15px 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

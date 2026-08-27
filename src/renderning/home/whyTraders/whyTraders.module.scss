@@ -1,0 +1,346 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.whyTraders {
+    background: var(--Midnight-Navy, #0B1638);
+    position: relative;
+    padding: 0 0 0 0;
+    overflow: hidden;
+
+    @include respond-to("tab") {
+        padding: 0 0 60px 0;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 380px 1fr;
+        gap: 100px;
+
+        @include respond-to("lg") {
+            grid-template-columns: 320px 1fr;
+            gap: 48px;
+        }
+
+        @include respond-to("tab") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .text {
+            padding: 96px 0 0 0;
+
+            @include respond-to("tab") {
+                padding: 50px 0 0 0;
+                position: static;
+            }
+        }
+
+        .five {
+            margin: 100px 0 0 0;
+
+            @include respond-to("tab") {
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+            }
+        }
+
+        .lineright {
+            background-color: #17254F;
+            position: absolute;
+            right: 0;
+            width: 1px;
+            top: 0;
+            height: 1268px;
+
+            @include respond-to("tab") {
+                display: none;
+            }
+        }
+
+        .six {
+            max-width: 430px;
+            margin-left: auto;
+            padding: 0 0 80px 0;
+            width: 100%;
+            position: relative;
+            display: flex;
+            margin-top: 180px;
+
+            @include respond-to("tab") {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .box {
+                margin-left: 80px;
+
+                @include respond-to("tab") {
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .fourStep {
+            max-width: 430px;
+            margin-left: auto;
+            width: 100%;
+            position: relative;
+            display: flex;
+            margin-top: 200px;
+
+            @include respond-to("tab") {
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .box {
+                margin-left: 80px;
+
+                @include respond-to("tab") {
+                    margin-left: 0;
+                }
+            }
+
+            .linefour {
+                background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+                mix-blend-mode: overlay;
+                width: 60px;
+                height: 910px;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                @include respond-to("tab") {
+                    display: none;
+                }
+            }
+        }
+
+        .sec {
+            max-width: 430px;
+            margin-left: auto;
+            width: 100%;
+            position: relative;
+            display: flex;
+
+            @include respond-to("tab") {
+                max-width: 100%;
+                margin: 0;
+            }
+
+            .line {
+                width: 1px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 710px;
+                background-color: #17254F;
+
+                @include respond-to("tab") {
+                    display: none;
+                }
+            }
+
+            .filltwo {
+                position: absolute;
+                top: 0;
+                width: 60px;
+                height: 951px;
+                right: 0;
+                background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+                mix-blend-mode: overlay;
+
+                @include respond-to("tab") {
+                    display: none;
+                }
+            }
+        }
+
+        .first {
+            display: flex;
+            align-items: flex-end;
+            position: relative;
+            padding: 440px 0 0 0;
+
+            @include respond-to("lg") {
+                padding: 240px 0 0 0;
+            }
+
+            @include respond-to("tab") {
+                padding: 0;
+            }
+
+            .line {
+                width: 1px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 734px;
+                background-color: #17254F;
+
+                @include respond-to("tab") {
+                    display: none;
+                }
+            }
+        }
+
+        .longline {
+            background-color: #17254F;
+            height: 1601px;
+            width: 1px;
+            left: 220px;
+            position: absolute;
+            top: 740px;
+
+            @include respond-to("tab") {
+                display: none;
+            }
+        }
+
+        .fillthree {
+            position: relative;
+            margin: 200px 0 0 0;
+
+            @include respond-to("tab") {
+                margin: 0;
+            }
+
+            .box {
+                margin-left: 220px;
+
+                @include respond-to("tab") {
+                    margin-left: 0;
+                }
+            }
+
+            .three {
+                background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+                mix-blend-mode: overlay;
+                width: 60px;
+                height: 859px;
+                position: absolute;
+                top: 0;
+                left: 140px;
+
+                @include respond-to("tab") {
+                    display: none;
+                }
+            }
+        }
+
+        .boxBorder {
+            display: flex;
+            gap: 20px;
+
+            @include respond-to("tab") {
+                width: 100%;
+            }
+
+            .firstFill {
+                background: linear-gradient(180deg, #FFF 0%, rgba(255, 255, 255, 0.00) 100%);
+                mix-blend-mode: overlay;
+                width: 60px;
+                height: 485px;
+
+                @include respond-to("tab") {
+                    display: none;
+                }
+            }
+        }
+
+        .box {
+            max-width: 350px;
+            width: 100%;
+            background: #121D3D;
+            padding: 40px;
+            border-radius: 4px;
+
+            @include respond-to("tab") {
+                max-width: 100%;
+                padding: 30px 24px;
+            }
+
+            h3 {
+                color: var(--Ivory-White, #F7F4EC);
+                font-size: 18px;
+                font-family: "BeVietnam-Medium", sans-serif;
+                font-weight: 500;
+                margin: 0 0 24px 0;
+                line-height: normal;
+
+                @include respond-to("sm") {
+                    font-size: 17px;
+                    margin-bottom: 16px;
+                }
+            }
+
+            p {
+                color: var(--Ivory-White, #F7F4EC);
+                font-size: 16px;
+                font-family: var(--font-inter-tight), sans-serif;
+                font-weight: 400;
+                line-height: 1.5;
+                margin: 0;
+
+                @include respond-to("sm") {
+                    font-size: 14.5px;
+                }
+            }
+
+            .boxHeader {
+                display: flex;
+                align-items: center;
+                padding: 0 0 32px 0;
+                justify-content: space-between;
+
+                @include respond-to("sm") {
+                    padding-bottom: 20px;
+                }
+
+                .counter {
+                    background: var(--Gradient, linear-gradient(180deg, #C59E63 0%, #E3D0A9 100%));
+                    width: 45px;
+                    height: 45px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 13px;
+                    font-weight: 700;
+                    line-height: normal;
+                    letter-spacing: 0.65px;
+                    text-transform: uppercase;
+                    border-radius: 2px;
+                }
+            }
+        }
+
+        h2 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 64px;
+            font-family: "BeVietnam-Regular", sans-serif;
+            font-weight: 400;
+            line-height: 90%;
+            letter-spacing: -3.2px;
+            margin: 0;
+
+            @include respond-to("lg") {
+                font-size: 52px;
+                letter-spacing: -2.6px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 40px;
+                letter-spacing: -2px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 32px;
+                letter-spacing: -1.6px;
+            }
+        }
+    }
+}

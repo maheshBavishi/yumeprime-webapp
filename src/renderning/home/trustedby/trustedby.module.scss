@@ -1,0 +1,154 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.trustedbySection {
+    width: 100%;
+}
+
+.trustedby {
+    padding: 120px 0;
+    border-top: 1px solid rgba(11, 22, 56, 0.15);
+
+    @include respond-to("tab") {
+        padding: 60px 0;
+    }
+
+    .title {
+        padding: 0 0 64px 0;
+
+        @include respond-to("tab") {
+            padding: 0 0 36px 0;
+        }
+
+        h2 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 64px;
+            font-weight: 400;
+            font-family: "BeVietnam-Regular", sans-serif;
+            line-height: 90%;
+            max-width: 518px;
+            letter-spacing: -3.2px;
+
+            @include respond-to("lg") {
+                font-size: 52px;
+                letter-spacing: -2.6px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 40px;
+                letter-spacing: -2px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 32px;
+                letter-spacing: -1.6px;
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        @include respond-to("tab") {
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            cursor: pointer;
+            user-select: none;
+            will-change: transform;
+
+            .card {
+                padding: 40px;
+                border-top: 1px solid rgba(11, 22, 56, 0.15);
+                background: #FFFFFF;
+                flex-grow: 1;
+                transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+
+                @include respond-to("tab") {
+                    padding: 30px 24px;
+                }
+
+                .logoWrapper {
+                    display: inline-block;
+
+                    img {
+                        display: block;
+                        height: 32px;
+                        width: auto;
+                        max-width: 100%;
+                    }
+                }
+
+                h3 {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 48px;
+                    font-weight: 600;
+                    line-height: 90%;
+                    font-family: "BeVietnam-Medium", sans-serif;
+                    letter-spacing: -2.4px;
+                    margin: 50px 0 0 0;
+
+                    @include respond-to("tab") {
+                        font-size: 38px;
+                        margin-top: 36px;
+                    }
+
+                    span {
+                        color: rgba(11, 22, 56, 0.30);
+                    }
+                }
+
+                p {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin: 24px 0 0 0;
+                    line-height: normal;
+                }
+            }
+
+            &:hover {
+                .card {
+                    border-top-color: var(--Midnight-Navy, #0B1638);
+                    background-color: #F8FAFD;
+                }
+            }
+
+            .buttonWrapper {
+                width: 100%;
+                display: flex;
+
+                > div {
+                    width: 100%;
+                    display: flex;
+                }
+
+                button {
+                    border-radius: 0px;
+                    padding: 18px 40px;
+                    text-align: left;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    @include respond-to("tab") {
+                        padding: 16px 24px;
+                    }
+                }
+            }
+        }
+    }
+}

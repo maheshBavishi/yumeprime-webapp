@@ -1,0 +1,203 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.tradeTerms {
+    background: var(--Midnight-Navy, #0B1638);
+    padding: 96px 0 250px 0;
+
+    @include respond-to("tab") {
+        padding: 60px 0 140px 0;
+    }
+
+    .sectionHeader {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 32px;
+
+        @include respond-to("tab") {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 28px;
+        }
+
+        h2 {
+            color: #F7F4EC;
+            font-size: 96px;
+            font-family: "BeVietnam-Regular", sans-serif;
+            font-weight: 400;
+            margin: 0 0 48px 0;
+            line-height: 90%;
+            letter-spacing: -4.8px;
+
+            @include respond-to("lg") {
+                font-size: 72px;
+                letter-spacing: -3.6px;
+                margin-bottom: 32px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 52px;
+                letter-spacing: -2.6px;
+                margin-bottom: 24px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 40px;
+                letter-spacing: -2px;
+            }
+        }
+
+        p {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.5;
+            max-width: 646px;
+
+            @include respond-to("tab") {
+                font-size: 16px;
+            }
+        }
+
+        .buttonWrapper {
+            flex-shrink: 0;
+        }
+    }
+
+    .image {
+        padding: 48px 0 0 0;
+        border-bottom: 1px solid #17254F;
+
+        .imageInner {
+            width: 100%;
+            cursor: pointer;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .oneAccount {
+        padding: 96px 0;
+        border-bottom: 1px solid #17254F;
+
+        @include respond-to("tab") {
+            padding: 60px 0;
+        }
+
+        h2 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 90%;
+            margin: 0 0 64px 0;
+            letter-spacing: -3.2px;
+            font-family: "BeVietnam-Regular", sans-serif;
+
+            @include respond-to("lg") {
+                font-size: 48px;
+                letter-spacing: -2.4px;
+                margin-bottom: 40px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 38px;
+                letter-spacing: -1.9px;
+                margin-bottom: 32px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 30px;
+                letter-spacing: -1.5px;
+            }
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 16px;
+
+            @include respond-to("lg") {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+
+            @include respond-to("sm") {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            .items {
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                user-select: none;
+
+                .box {
+                    background-color: #121F3C;
+                    border: 1px solid rgba(23, 37, 79, 0.8);
+                    height: 223px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    position: relative;
+                    will-change: transform, border-color, box-shadow;
+
+                    @include respond-to("tab") {
+                        height: 190px;
+                    }
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                &.transparentItem {
+                    .box {
+                        background-color: transparent;
+                    }
+                }
+
+                .details {
+                    padding: 10px 0 0 0;
+
+                    h3 {
+                        color: var(--Ivory-White, #F7F4EC);
+                        font-size: 20px;
+                        font-family: "BeVietnam-Medium", sans-serif;
+                        font-weight: 500;
+                        line-height: normal;
+                        margin: 0 0 6px 0;
+                    }
+
+                    .readMoreLink {
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        color: var(--Ivory-White, #F7F4EC);
+                        font-size: 12px;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: 1.2px;
+                        text-transform: uppercase;
+                        cursor: pointer;
+
+                        .arrowIcon {
+                            width: 12px;
+                            height: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
