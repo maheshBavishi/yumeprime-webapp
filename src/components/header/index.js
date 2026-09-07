@@ -7,14 +7,14 @@ import Button from '../button';
 const Logo = '/assets/logo/logo.svg';
 
 const navLinks = [
-    { label: 'Company', href: '#' },
-    { label: 'Markets', href: '#' },
-    { label: 'Account Types', href: '#' },
-    { label: 'Trading Platforms', href: '#' },
-    { label: 'IB Programme', href: '#' },
-    { label: 'Trading Solutions', href: '#' },
-    { label: 'Trade & Win 🏆', href: '#', isGold: true },
-    { label: 'Blog', href: '#' },
+    // { label: 'Company', href: '#' },
+    // { label: 'Markets', href: '#' },
+    // { label: 'Account Types', href: '#' },
+    // { label: 'Trading Platforms', href: '#' },
+    // { label: 'IB Programme', href: '#' },
+    // { label: 'Trading Solutions', href: '#' },
+    // { label: 'Trade & Win 🏆', href: '#', isGold: true },
+    // { label: 'Blog', href: '#' },
 ];
 
 export default function Header() {
@@ -59,9 +59,9 @@ export default function Header() {
             {/* Desktop Menu */}
             <nav className={styles.menu}>
                 {navLinks.map((link, idx) => (
-                    <a 
-                        key={idx} 
-                        href={link.href} 
+                    <a
+                        key={idx}
+                        href={link.href}
                         className={`${styles.navItem} ${link.isGold ? styles.goldText : ''}`}
                         aria-label={link.label}
                     >
@@ -71,11 +71,11 @@ export default function Header() {
                         </span>
                     </a>
                 ))}
-                <Button text="Open Live Account" />
+                {/* <Button text="Open Live Account" /> */}
             </nav>
 
             {/* Mobile / Tablet Hamburger Toggle Button */}
-            <button 
+            {/* <button
                 className={`${styles.hamburger} ${isMobileMenuOpen ? styles.open : ''}`}
                 onClick={toggleMenu}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -84,14 +84,14 @@ export default function Header() {
                 <span className={styles.line} />
                 <span className={styles.line} />
                 <span className={styles.line} />
-            </button>
+            </button> */}
 
             {/* Mobile / Tablet Drawer Menu & Backdrop */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
                     <>
                         {/* Dim Backdrop */}
-                        <motion.div 
+                        <motion.div
                             className={styles.backdrop}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -101,7 +101,7 @@ export default function Header() {
                         />
 
                         {/* Slide-out Drawer */}
-                        <motion.div 
+                        <motion.div
                             className={styles.drawer}
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
@@ -112,21 +112,21 @@ export default function Header() {
                                 <div className={styles.drawerLogo}>
                                     <img src={Logo} alt='Yume Prime Logo' />
                                 </div>
-                                <button 
+                                <button
                                     className={styles.closeBtn}
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     aria-label="Close menu"
                                 >
                                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </button>
                             </div>
 
                             <div className={styles.drawerNav}>
                                 {navLinks.map((link, idx) => (
-                                    <motion.a 
-                                        key={idx} 
+                                    <motion.a
+                                        key={idx}
                                         href={link.href}
                                         className={link.isGold ? styles.goldText : ''}
                                         onClick={() => setIsMobileMenuOpen(false)}
@@ -139,7 +139,7 @@ export default function Header() {
                                 ))}
                             </div>
 
-                            <motion.div 
+                            <motion.div
                                 className={styles.drawerFooter}
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}

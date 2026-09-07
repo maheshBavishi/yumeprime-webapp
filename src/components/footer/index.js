@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import styles from './footer.module.scss';
 import classNames from 'classnames';
 
@@ -45,25 +44,18 @@ const YouTubeIcon = () => (
 
 // Contact Info Icons
 const MailIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <path d="M18.3333 8.83333C16.5838 8.83333 15.1667 7.41625 15.1667 5.66667C15.1667 3.91708 16.5838 2.5 18.3333 2.5C20.0829 2.5 21.5 3.91708 21.5 5.66667C21.5 7.41625 20.0829 8.83333 18.3333 8.83333ZM12 14.7075C12.6096 14.7075 13.2192 14.4779 13.6783 14.0108L17.3754 10.3138C15.2142 9.87042 13.5833 7.95458 13.5833 5.65875C13.5833 5.38958 13.615 5.12833 13.6546 4.86708H6.45833C5.02542 4.86708 3.7825 5.635 3.08583 6.775L10.3217 14.0188C10.7808 14.4779 11.3904 14.7154 12 14.7154V14.7075ZM19.7267 10.2029L14.7946 15.135C14.0267 15.9029 13.0054 16.2908 11.9921 16.2908C10.9788 16.2908 9.96542 15.9029 9.18958 15.135L2.53958 8.46917C2.53167 8.58792 2.5 8.70667 2.5 8.83333V17.5417C2.5 19.7267 4.27333 21.5 6.45833 21.5H17.5417C19.7267 21.5 21.5 19.7267 21.5 17.5417L21.4842 9.20542C20.9775 9.65667 20.3838 9.99708 19.7267 10.2029Z" fill="white" />
-    </svg>
-);
-
-const PhoneIcon = () => (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-        <line x1="12" y1="18" x2="12.01" y2="18" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M18.3333 8.83333C16.5838 8.83333 15.1667 7.41625 15.1667 5.66667C15.1667 3.91708 16.5838 2.5 18.3333 2.5C20.0829 2.5 21.5 3.91708 21.5 5.66667C21.5 7.41625 20.0829 8.83333 18.3333 8.83333ZM12 14.7075C12.6096 14.7075 13.2192 14.4779 13.6783 14.0108L17.3754 10.3138C15.2142 9.87042 13.5833 7.95458 13.5833 5.65875C13.5833 5.38958 13.615 5.12833 13.6546 4.86708H6.45833C5.02542 4.86708 3.7825 5.635 3.08583 6.775L10.3217 14.0188C10.7808 14.4779 11.3904 14.7154 12 14.7154V14.7075ZM19.7267 10.2029L14.7946 15.135C14.0267 15.9029 13.0054 16.2908 11.9921 16.2908C10.9788 16.2908 9.96542 15.9029 9.18958 15.135L2.53958 8.46917C2.53167 8.58792 2.5 8.70667 2.5 8.83333V17.5417C2.5 19.7267 4.27333 21.5 6.45833 21.5H17.5417C19.7267 21.5 21.5 19.7267 21.5 17.5417L21.4842 9.20542C20.9775 9.65667 20.3838 9.99708 19.7267 10.2029Z" fill="currentColor" />
     </svg>
 );
 
 const LocationIcon = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <g clip-path="url(#clip0_6571_1432)">
-            <path d="M22 10.0067C22 8.02891 21.4134 6.09554 20.3146 4.45107C19.2158 2.80661 17.654 1.5249 15.8268 0.768037C13.9996 0.0111724 11.9889 -0.186861 10.0491 0.19898C8.10932 0.584821 6.3275 1.53721 4.92898 2.9357C3.99989 3.86494 3.26305 4.96818 2.76058 6.18235C2.25811 7.39653 1.99987 8.69783 2.00061 10.0119C2.00135 11.3259 2.26107 12.6269 2.76491 13.8405C3.26875 15.0541 4.00684 16.1565 4.93698 17.0847L9.96198 21.9997H4.99998V23.9997H19V21.9997H14.038L19.071 17.0767C20.0025 16.1505 20.741 15.0487 21.2438 13.8351C21.7465 12.6216 22.0036 11.3203 22 10.0067ZM16 9.4997C16 10.8173 15.3212 12.0419 14.2039 12.7402L14.12 12.7927C12.8229 13.6034 11.1771 13.6034 9.87998 12.7927L9.79604 12.7402C8.67873 12.0419 7.99998 10.8173 7.99998 9.4997C7.99998 8.18213 8.67873 6.95748 9.79604 6.25917L9.87998 6.2067C11.1771 5.39603 12.8229 5.39603 14.12 6.2067L14.2039 6.25917C15.3212 6.95748 16 8.18213 16 9.4997Z" fill="#F0F4F7" />
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <g clipPath="url(#clip0_loc_footer)">
+            <path d="M22 10.0067C22 8.02891 21.4134 6.09554 20.3146 4.45107C19.2158 2.80661 17.654 1.5249 15.8268 0.768037C13.9996 0.0111724 11.9889 -0.186861 10.0491 0.19898C8.10932 0.584821 6.3275 1.53721 4.92898 2.9357C3.99989 3.86494 3.26305 4.96818 2.76058 6.18235C2.25811 7.39653 1.99987 8.69783 2.00061 10.0119C2.00135 11.3259 2.26107 12.6269 2.76491 13.8405C3.26875 15.0541 4.00684 16.1565 4.93698 17.0847L9.96198 21.9997H4.99998V23.9997H19V21.9997H14.038L19.071 17.0767C20.0025 16.1505 20.741 15.0487 21.2438 13.8351C21.7465 12.6216 22.0036 11.3203 22 10.0067ZM16 9.4997C16 10.8173 15.3212 12.0419 14.2039 12.7402L14.12 12.7927C12.8229 13.6034 11.1771 13.6034 9.87998 12.7927L9.79604 12.7402C8.67873 12.0419 7.99998 10.8173 7.99998 9.4997C7.99998 8.18213 8.67873 6.95748 9.79604 6.25917L9.87998 6.2067C11.1771 5.39603 12.8229 5.39603 14.12 6.2067L14.2039 6.25917C15.3212 6.95748 16 8.18213 16 9.4997Z" fill="currentColor" />
         </g>
         <defs>
-            <clipPath id="clip0_6571_1432">
+            <clipPath id="clip0_loc_footer">
                 <rect width="24" height="24" fill="white" />
             </clipPath>
         </defs>
@@ -135,57 +127,29 @@ export default function Footer() {
 
                 <div className={styles.separator} />
 
-                {/* Middle Navigation Columns (4 Columns) */}
-                <div className={styles.navGrid}>
-                    {/* Column 1: Company */}
-                    <div className={styles.navCol}>
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Why Yume Prime</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
+                {/* Contact Section */}
+                <div className={styles.contactSection}>
+                    <div className={styles.contactCard}>
+                        <div className={styles.contactIconWrapper}>
+                            <MailIcon />
+                        </div>
+                        <div className={styles.contactDetails}>
+                            <span className={styles.contactLabel}>Email Support</span>
+                            <a href="mailto:support@yumeprime.com" className={styles.contactValue}>
+                                support@yumeprime.com
+                            </a>
+                        </div>
                     </div>
 
-                    {/* Column 2: Trading */}
-                    <div className={styles.navCol}>
-                        <h4>Trading</h4>
-                        <ul>
-                            <li><a href="#">Markets</a></li>
-                            <li><a href="#">Account Types</a></li>
-                            <li><a href="#">Trading Platforms</a></li>
-                            <li><a href="#">Trading Solutions</a></li>
-                            <li><a href="#">Trade & Win</a></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 3: Legal */}
-                    <div className={styles.navCol}>
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="#">Risk Disclosure</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Client Agreement</a></li>
-                            <li><a href="#">AML/KYC Policy</a></li>
-                            <li><a href="#">Restricted Countries</a></li>
-                        </ul>
-                    </div>
-
-                    {/* Column 4: Contact Details */}
-                    <div className={`${styles.navCol} ${styles.contactCol}`}>
-                        <h4>Contact Details</h4>
-                        <div className={styles.contactList}>
-                            <div className={styles.contactItem}>
-                                <span className={styles.contactIcon}><MailIcon /></span>
-                                <span className={styles.pipe}>|</span>
-                                <a href="mailto:support@yumeprime.com">support@yumeprime.com</a>
-                            </div>
-
-                            <div className={styles.contactItem}>
-                                <span className={styles.contactIcon}><LocationIcon /></span>
-                                <span className={styles.pipe}>|</span>
-                                <span>Office no 33, 21 Rodney Bay Gardens, Rodney Bay, Gros Islet, Saint Lucia.</span>
-                            </div>
+                    <div className={styles.contactCard}>
+                        <div className={styles.contactIconWrapper}>
+                            <LocationIcon />
+                        </div>
+                        <div className={styles.contactDetails}>
+                            <span className={styles.contactLabel}>Registered Office</span>
+                            <span className={styles.contactValue}>
+                                Office no 33, 21 Rodney Bay Gardens, Rodney Bay, Gros Islet, Saint Lucia.
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -211,7 +175,7 @@ export default function Footer() {
                     <div className={styles.disclaimerBlock}>
                         <h5>Restricted Regions</h5>
                         <p>
-                            YUME PRIME FINANCIAL LTD does not offer services to residents or citizens of [Restricted jurisdictions commonly include the United States, Canada, Japan, North Korea (DPRK), Iran, Syria, Cuba, and other countries or territories where applicable laws, sanctions, regulatory requirements, licensing restrictions, or YUME PRIME’s internal risk policies prohibit the provision of services.], or to persons in any other jurisdiction where such services would contravene local laws or regulations. The Yume Prime platform is not intended for use by any person in a country where the offering of our services would conflict with applicable legal or regulatory requirements.
+                            YUME PRIME FINANCIAL LTD does not offer services to residents or citizens of Restricted jurisdictions commonly include the United States, Canada, Japan, North Korea (DPRK), Iran, Syria, Cuba, and other countries or territories where applicable laws, sanctions, regulatory requirements, licensing restrictions, or YUME PRIME’s internal risk policies prohibit the provision of services., or to persons in any other jurisdiction where such services would contravene local laws or regulations. The Yume Prime platform is not intended for use by any person in a country where the offering of our services would conflict with applicable legal or regulatory requirements.
                         </p>
                     </div>
                 </div>
@@ -228,3 +192,4 @@ export default function Footer() {
         </footer>
     );
 }
+

@@ -23,9 +23,9 @@ export default function HomePage() {
             <TradeTerms />
             <CardSection />
             <FeaturedSection />
-            <Trustedby />
+            {/* <Trustedby /> */}
             <MarketInsights />
-            <FaqSection />
+            {/* <FaqSection /> */}
             <VisionSection />
         </div>
     )

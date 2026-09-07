@@ -24,9 +24,9 @@ const CheckIcon = ({ className }) => (
 const tableRows = [
     {
         label: "PLATFORMS",
-        standard: "MT4 - MT5 - cTrader",
-        plus: "MT4 - MT5 - cTrader - Trading View",
-        pro: "MT4 - MT5 - cTrader - Trading View",
+        standard: " MT5 - cTrader",
+        plus: " MT5 - cTrader - Trading View",
+        pro: " MT5 - cTrader - Trading View",
     },
     {
         label: "MINIMUM DEPOSIT",

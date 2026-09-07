@@ -20,17 +20,22 @@
         padding-top: 100px;
     }
 
+    @include respond-to("sm") {
+        background-position: 41% 15%;
+    }
+
+
+
     /* Mobile / Tablet Contrast Scrim to make text 100% crisp & readable */
     &::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: linear-gradient(180deg, 
-            rgba(11, 22, 56, 0.15) 0%, 
-            rgba(11, 22, 56, 0.45) 35%, 
-            rgba(11, 22, 56, 0.88) 65%, 
-            rgba(11, 22, 56, 0.98) 100%
-        );
+        background: linear-gradient(180deg,
+                rgba(11, 22, 56, 0.15) 0%,
+                rgba(11, 22, 56, 0.45) 35%,
+                rgba(11, 22, 56, 0.88) 65%,
+                rgba(11, 22, 56, 0.98) 100%);
         pointer-events: none;
         z-index: 1;
         display: none;
@@ -176,7 +181,7 @@
                     width: 100%;
                     gap: 12px;
 
-                    > div {
+                    >div {
                         width: 100%;
                         display: flex;
 
@@ -191,5 +196,3 @@
         }
     }
 }
-
-
