@@ -161,7 +161,11 @@ export default function Footer() {
                     <div className={styles.disclaimerBlock}>
                         <h5>Legal</h5>
                         <p>
-                            YUME PRIME FINANCIAL LTD, operating as Yume Prime, is a company incorporated in Saint Lucia. Registration No: 2026-00632. The registered office of YUME PRIME FINANCIAL LTD is at office no 33, 21 Rodney Bay Gardens, Rodney Bay, Gros Islet, Saint Lucia.
+                            YUME PRIME FINANCIAL LTD, operating as Yume Prime, is a company incorporated in Saint Lucia. Registration No: 2026-00632. The registered office of YUME PRIME FINANCIAL LTD is at
+                            Registered Address:
+                            Unit 1, La Place Creole Rodney Bay Village Gros Islet, Saint Lucia.
+                            Operational Address:
+                            Office no 33, 21 Rodney Bay Gardens, Rodney Bay, Gros Islet, Saint Lucia.
                         </p>
                     </div>
 
@@ -175,7 +179,7 @@ export default function Footer() {
                     <div className={styles.disclaimerBlock}>
                         <h5>Restricted Regions</h5>
                         <p>
-                            YUME PRIME FINANCIAL LTD does not offer services to residents or citizens of Restricted jurisdictions commonly include the United States, Canada, Japan, North Korea (DPRK), Iran, Syria, Cuba, and other countries or territories where applicable laws, sanctions, regulatory requirements, licensing restrictions, or YUME PRIME’s internal risk policies prohibit the provision of services., or to persons in any other jurisdiction where such services would contravene local laws or regulations. The Yume Prime platform is not intended for use by any person in a country where the offering of our services would conflict with applicable legal or regulatory requirements.
+                            YUME PRIME FINANCIAL LTD does not offer services to residents or citizens of Restricted jurisdictions commonly include the United States, UAE , India , Canada, Japan, North Korea (DPRK), Iran, Syria, Cuba, and other countries or territories where applicable laws, sanctions, regulatory requirements, licensing restrictions, or YUME PRIME’s internal risk policies prohibit the provision of services., or to persons in any other jurisdiction where such services would contravene local laws or regulations. The Yume Prime platform is not intended for use by any person in a country where the offering of our services would conflict with applicable legal or regulatory requirements.
                         </p>
                     </div>
                 </div>
