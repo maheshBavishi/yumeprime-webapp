@@ -146,7 +146,19 @@ export default function Footer() {
                             <LocationIcon />
                         </div>
                         <div className={styles.contactDetails}>
-                            <span className={styles.contactLabel}>Registered Office</span>
+                            <span className={styles.contactLabel}>Registered Address</span>
+                            <span className={styles.contactValue}>
+                                Unit 1, La Place Creole Rodney Bay Village Gros Islet, Saint Lucia.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className={styles.contactCard}>
+                        <div className={styles.contactIconWrapper}>
+                            <LocationIcon />
+                        </div>
+                        <div className={styles.contactDetails}>
+                            <span className={styles.contactLabel}>Operational Address</span>
                             <span className={styles.contactValue}>
                                 Office no 33, 21 Rodney Bay Gardens, Rodney Bay, Gros Islet, Saint Lucia.
                             </span>
@@ -161,11 +173,7 @@ export default function Footer() {
                     <div className={styles.disclaimerBlock}>
                         <h5>Legal</h5>
                         <p>
-                            YUME PRIME FINANCIAL LTD, operating as Yume Prime, is a company incorporated in Saint Lucia. Registration No: 2026-00632. The registered office of YUME PRIME FINANCIAL LTD is at
-                            Registered Address:
-                            Unit 1, La Place Creole Rodney Bay Village Gros Islet, Saint Lucia.
-                            Operational Address:
-                            Office no 33, 21 Rodney Bay Gardens, Rodney Bay, Gros Islet, Saint Lucia.
+                            YUME PRIME FINANCIAL LTD, operating as Yume Prime, is a company incorporated in Saint Lucia. Registration No: 2026-00632. Registered Address: Unit 1, La Place Creole Rodney Bay Village Gros Islet, Saint Lucia. Operational Address: Office no 33, 21 Rodney Bay Gardens, Rodney Bay, Gros Islet, Saint Lucia.
                         </p>
                     </div>
 
