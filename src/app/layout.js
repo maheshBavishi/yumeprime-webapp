@@ -2,7 +2,7 @@ import { Geist, Geist_Mono, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-
+//Updated on 7th Sep
 const intertight = Inter_Tight({
   variable: "--font-inter-tight",
   subsets: ["latin"],
