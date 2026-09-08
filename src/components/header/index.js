@@ -10,8 +10,8 @@ const MotionLink = motion(Link);
 
 const navLinks = [
     { label: 'Company', href: '/company' },
+    { label: 'Markets', href: '/markets' },
     { label: 'Contact Us ', href: '/contact' },
-    // { label: 'Account Types', href: '#' },
     // { label: 'Trading Platforms', href: '#' },
     // { label: 'IB Programme', href: '#' },
     // { label: 'Trading Solutions', href: '#' },

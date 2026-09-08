@@ -105,7 +105,7 @@ export default function ContactHero() {
                 <SupportIcon />
                 <div>
                   <p>Support</p>
-                  <span>support@yumeprime.com</span>
+                  <a href='mailto:support@yumeprime.com'>support@yumeprime.com</a>
                 </div>
               </motion.div>
 
@@ -113,36 +113,36 @@ export default function ContactHero() {
                 <PartnershipsIcon />
                 <div>
                   <p>Partnerships / IB</p>
-                  <span>partners@yumeprime.com</span>
+                  <a href='mailto:support@yumeprime.com'>partners@yumeprime.com</a>
                 </div>
               </motion.div>
 
-              <motion.div className={styles.icontextGrid} variants={fadeInUp}>
+              {/* <motion.div className={styles.icontextGrid} variants={fadeInUp}>
                 <ChatIcon />
                 <div>
                   <p>Live Chat</p>
                   <span>Available [24/5 / 24/7] via website and app</span>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
-              <motion.div className={styles.icontextGrid} variants={fadeInUp}>
+              {/* <motion.div className={styles.icontextGrid} variants={fadeInUp}>
                 <CallIcon />
                 <div>
                   <p>Phone</p>
                   <span>[+___ ___ ___ ____]</span>
                 </div>
-              </motion.div>
+              </motion.div> */}
 
               <motion.div className={styles.icontextGrid} variants={fadeInUp}>
                 <LocationIcon />
                 <div>
                   <p>Registered Office</p>
-                  <span>[Full address, St. Lucia]</span>
+                  <span>Unit 1, La Place Creole Rodney Bay Village Gros Islet, Saint Lucia.</span>
                 </div>
               </motion.div>
             </motion.div>
 
-            <div className={styles.support}>
+            {/* <div className={styles.support}>
               <h3>Support Hours</h3>
               <div className={styles.allContentAlignment}>
                 <div className={styles.content}>
@@ -162,7 +162,7 @@ export default function ContactHero() {
                   <span>English, Arabic, Hindi, [others]</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </motion.div>
       </div>

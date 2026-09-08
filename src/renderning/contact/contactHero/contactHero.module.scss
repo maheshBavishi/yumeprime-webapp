@@ -368,8 +368,10 @@
                                 }
                             }
 
-                            span {
+                            span,
+                            a {
                                 display: block;
+                                text-decoration: none;
                                 color: var(--Ivory-White, #F7F4EC);
                                 font-size: 18px;
                                 font-weight: 400;
