@@ -1,0 +1,55 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.yourTrade {
+    padding: 96px 0;
+
+    .title {
+        padding: 0 0 64px 0;
+
+        h2 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 64px;
+            font-family: "BeVietnam-Regular";
+            font-weight: 400;
+            line-height: 90%;
+            letter-spacing: -3.2px;
+        }
+    }
+
+    .lastContent {
+        padding: 64px 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .btnWrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h3 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 24px;
+            font-weight: 500;
+            line-height: normal;
+            max-width: 406px;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        padding: 0 0 64px 0;
+        border-bottom: 1px solid rgb(11, 22, 56, .15);
+
+        .items {
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+}

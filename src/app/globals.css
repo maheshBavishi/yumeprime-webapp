@@ -42,3 +42,8 @@ h6 {
   padding: 0 20px;
   margin: 0 auto;
 }
+.container-xl {
+  max-width: calc(1400px + 40px);
+  padding: 0 20px;
+  margin: 0 auto;
+}

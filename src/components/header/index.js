@@ -7,8 +7,8 @@ import Button from '../button';
 const Logo = '/assets/logo/logo.svg';
 
 const navLinks = [
-    // { label: 'Company', href: '#' },
-    // { label: 'Markets', href: '#' },
+    { label: 'Company', href: '/company' },
+    { label: 'Contact Us ', href: '/contact' },
     // { label: 'Account Types', href: '#' },
     // { label: 'Trading Platforms', href: '#' },
     // { label: 'IB Programme', href: '#' },
@@ -75,7 +75,7 @@ export default function Header() {
             </nav>
 
             {/* Mobile / Tablet Hamburger Toggle Button */}
-            {/* <button
+            <button
                 className={`${styles.hamburger} ${isMobileMenuOpen ? styles.open : ''}`}
                 onClick={toggleMenu}
                 aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
@@ -84,7 +84,7 @@ export default function Header() {
                 <span className={styles.line} />
                 <span className={styles.line} />
                 <span className={styles.line} />
-            </button> */}
+            </button>
 
             {/* Mobile / Tablet Drawer Menu & Backdrop */}
             <AnimatePresence>

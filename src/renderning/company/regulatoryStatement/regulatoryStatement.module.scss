@@ -1,0 +1,192 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.regulatoryStatement {
+    background: var(--Midnight-Navy, #0B1638);
+    padding: 145px 0 0 0;
+    overflow: hidden;
+
+    @include respond-to("lg") {
+        padding: 100px 0 0 0;
+    }
+
+    @include respond-to("tab") {
+        padding: 70px 0 0 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 48px 0 0 0;
+    }
+
+    h2 {
+        color: #F7F4EC;
+        text-align: center;
+        font-family: "BeVietnam-Regular";
+        font-size: 96px;
+        margin: 0 0 48px 0;
+        font-weight: 400;
+        line-height: 90%;
+        letter-spacing: -4.8px;
+
+        @include respond-to("lg") {
+            font-size: 72px;
+            letter-spacing: -3.6px;
+            margin: 0 0 36px 0;
+        }
+
+        @include respond-to("tab") {
+            font-size: 48px;
+            letter-spacing: -2.4px;
+            margin: 0 0 24px 0;
+        }
+
+        @include respond-to("sm") {
+            font-size: 32px;
+            letter-spacing: -1.6px;
+            margin: 0 0 16px 0;
+        }
+    }
+
+    p {
+        color: var(--Ivory-White, #F7F4EC);
+        text-align: center;
+        font-size: 18px;
+        font-style: normal;
+        max-width: 768px;
+        margin: 0 auto 24px auto;
+        font-weight: 500;
+        line-height: 1.5;
+
+        @include respond-to("tab") {
+            font-size: 16px;
+            max-width: 100%;
+            margin: 0 auto 20px auto;
+        }
+
+        @include respond-to("sm") {
+            font-size: 14.5px;
+            margin: 0 auto 16px auto;
+        }
+    }
+
+    .buttonCenter {
+        display: flex;
+        justify-content: center;
+        padding: 24px 0 30px 0;
+
+        @include respond-to("tab") {
+            padding: 16px 0 24px 0;
+        }
+
+        @include respond-to("sm") {
+            padding: 12px 0 20px 0;
+        }
+    }
+
+    .video {
+        padding: 60px 0 0 0;
+        position: relative;
+
+        @include respond-to("tab") {
+            padding: 36px 0 0 0;
+        }
+
+        @include respond-to("sm") {
+            padding: 24px 0 0 0;
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 380px;
+            height: 380px;
+            border-radius: 650px;
+            background: var(--Midnight-Navy, #0B1638);
+            filter: blur(85px);
+            pointer-events: none;
+            z-index: 2;
+
+            @include respond-to("tab") {
+                width: 200px;
+                height: 200px;
+                filter: blur(50px);
+            }
+        }
+
+        &::before {
+            left: -120px;
+
+            @include respond-to("tab") {
+                left: -60px;
+            }
+        }
+
+        &::after {
+            right: -120px;
+
+            @include respond-to("tab") {
+                right: -60px;
+            }
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+    }
+
+    .centerText {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 24px;
+        padding: 0 0 48px 0;
+        border-bottom: 1px solid #17254F;
+
+        @include respond-to("tab") {
+            gap: 16px;
+            padding: 0 0 32px 0;
+        }
+
+        @include respond-to("sm") {
+            flex-direction: column;
+            gap: 12px;
+            padding: 0 0 24px 0;
+        }
+
+        .line {
+            width: 1px;
+            opacity: 0.2;
+            background: #F7F4EC;
+            height: 20px;
+
+            @include respond-to("sm") {
+                display: none;
+            }
+        }
+
+        span {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 12px;
+            font-weight: 600;
+            line-height: normal;
+            letter-spacing: 1.2px;
+            text-decoration-line: underline;
+            text-decoration-style: solid;
+            text-decoration-skip-ink: auto;
+            text-decoration-thickness: auto;
+            text-underline-offset: auto;
+            text-transform: uppercase;
+
+            @include respond-to("sm") {
+                font-size: 11px;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+
+.input {
+    label {
+        color: var(--Ivory-White, #F7F4EC);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 8px;
+        display: block;
+        padding: 0 0 12px 0;
+    }
+
+    input {
+        width: 100%;
+        border-radius: 52px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: var(--Ivory-White, #F7F4EC);
+        height: 45px;
+        color: var(--Midnight-Navy, #0B1638);
+        font-size: 13px;
+        font-weight: 500;
+        line-height: normal;
+        outline: none;
+        padding: 0 16px;
+        letter-spacing: 0.65px;
+    }
+
+    ::placeholder {
+        color: var(--Midnight-Navy, #0B1638);
+        font-size: 13px;
+        font-weight: 500;
+        line-height: normal;
+        letter-spacing: 0.65px;
+        opacity: 0.6;
+        text-transform: uppercase;
+    }
+}

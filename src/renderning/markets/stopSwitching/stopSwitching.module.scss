@@ -1,0 +1,48 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.stopSwitching {
+    .title {
+        padding: 96px 0;
+
+        h2 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 90%;
+            max-width: 668px;
+            letter-spacing: -3.2px;
+            font-family: "BeVietnam-Regular";
+        }
+    }
+
+    .line {
+        border-top: 1px solid rgba(23, 37, 79, 0.15);
+        width: 100%;
+    }
+
+    .leftright {
+        border-bottom: 1px solid rgba(23, 37, 79, 0.15);
+
+        .spacing {
+            padding: 120px 80px;
+            border-left: 1px solid rgba(23, 37, 79, 0.15);
+            border-right: 1px solid rgba(23, 37, 79, 0.15);
+
+            p {
+                color: var(--Midnight-Navy, #0B1638);
+                font-size: 32px;
+                line-height: normal;
+                letter-spacing: -1.6px;
+                max-width: 1200px;
+                font-family: "BeVietnam-Regular";
+
+                span {
+                    font-family: "BeVietnam-ThinItalic";
+                    font-weight: 250;
+                }
+
+            }
+        }
+    }
+}

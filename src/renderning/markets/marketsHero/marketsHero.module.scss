@@ -1,0 +1,54 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.marketsHero {
+    background: var(--Midnight-Navy, #0B1638);
+    position: relative;
+    padding: 350px 0 64px 0;
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 634px;
+        opacity: 0.5;
+        background: #1F2EDB;
+        filter: blur(200px);
+        width: 400px;
+        height: 400px;
+        content: '';
+    }
+
+    .content {
+        padding: 0 48px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        h2 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 96px;
+            max-width: 561px;
+            font-weight: 400;
+            line-height: 90%;
+            font-family: "BeVietnam-Regular";
+            letter-spacing: -4.8px;
+
+            span {
+                font-weight: 250;
+                font-family: "BeVietnam-ThinItalic";
+            }
+        }
+
+        p {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 18px;
+            margin: 0 0 32px 0;
+            font-weight: 500;
+            line-height: normal;
+            max-width: 437px;
+        }
+    }
+}

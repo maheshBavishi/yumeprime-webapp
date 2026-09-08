@@ -1,0 +1,104 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.whyChoose {
+    background: var(--Midnight-Navy, #0B1638);
+    padding: 96px 0;
+
+    .title {
+        padding: 0 0 65px 0;
+
+        h2 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 64px;
+            font-weight: 400;
+            font-family: "BeVietnam-Regular";
+            line-height: 90%;
+            letter-spacing: -3.2px;
+            text-transform: capitalize;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0px;
+        border-top: 1px solid rgba(247, 244, 236, 0.10);
+        perspective: 1000px;
+
+        .items {
+            border-right: 1px solid rgba(247, 244, 236, 0.10);
+            border-bottom: 1px solid rgba(247, 244, 236, 0.10);
+            padding: 40px;
+            transition: background 0.3s ease, border-color 0.3s ease;
+            transform-style: preserve-3d;
+            overflow: hidden;
+
+            &:hover {
+                border-color: rgba(201, 164, 92, 0.3);
+                z-index: 2;
+            }
+
+            .content {
+                padding: 64px 0 0 0;
+
+                h3 {
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: normal;
+                    margin: 0 0 10px 0;
+                }
+
+                p {
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+            }
+
+            svg {
+                display: block;
+                max-width: 100px;
+            }
+
+            &:nth-child(3),
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+
+    .lastGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 64px;
+        padding: 120px 0 0 0;
+
+        .box {
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        h4 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 90%;
+            font-family: "BeVietnam-Regular";
+            text-transform: lowercase;
+
+            max-width: 671px;
+            letter-spacing: -3.2px;
+
+            span {
+                text-transform: capitalize;
+            }
+        }
+    }
+}

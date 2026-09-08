@@ -1,0 +1,126 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.companyHero {
+    background: var(--Midnight-Navy, #0B1638);
+    position: relative;
+    padding: 300px 0 64px 0;
+    overflow: hidden;
+
+    @include respond-to("lg") {
+        padding: 220px 0 50px 0;
+    }
+
+    @include respond-to("md") {
+        padding: 180px 20px 40px 20px;
+    }
+
+    @include respond-to("tab") {
+        padding: 140px 20px 36px 20px;
+    }
+
+    @include respond-to("sm") {
+        padding: 110px 20px 28px 20px;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 634px;
+        opacity: 0.5;
+        background: #1F2EDB;
+        filter: blur(200px);
+        width: 400px;
+        height: 400px;
+        content: '';
+
+        @include respond-to("tab") {
+            width: 250px;
+            height: 250px;
+            filter: blur(120px);
+        }
+    }
+
+    .content {
+        padding: 0 48px;
+        position: relative;
+        z-index: 1;
+
+        @include respond-to("lg") {
+            padding: 0 32px;
+        }
+
+        @include respond-to("tab") {
+            padding: 0 16px;
+        }
+
+        @include respond-to("sm") {
+            padding: 0;
+        }
+
+        p {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            max-width: 390px;
+            margin: 60px 0 0 0;
+            line-height: normal;
+
+            @include respond-to("lg") {
+                margin: 48px 0 0 0;
+            }
+
+            @include respond-to("tab") {
+                font-size: 16px;
+                margin: 32px 0 0 0;
+                max-width: 100%;
+            }
+
+            @include respond-to("sm") {
+                font-size: 14.5px;
+                margin: 24px 0 0 0;
+            }
+        }
+
+        h2 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 96px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 90%;
+            letter-spacing: -4.8px;
+            max-width: 636px;
+            font-family: "BeVietnam-Regular";
+
+            @include respond-to("lg") {
+                font-size: 76px;
+                letter-spacing: -3.8px;
+                max-width: 540px;
+            }
+
+            @include respond-to("md") {
+                font-size: 60px;
+                letter-spacing: -3px;
+                max-width: 480px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 44px;
+                letter-spacing: -2.2px;
+                max-width: 100%;
+            }
+
+            @include respond-to("sm") {
+                font-size: 32px;
+                letter-spacing: -1.6px;
+            }
+
+            span {
+                font-family: "BeVietnam-ThinItalic";
+                font-weight: 250;
+            }
+        }
+    }
+}
