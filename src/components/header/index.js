@@ -1,10 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './header.module.scss';
 import Button from '../button';
 
 const Logo = '/assets/logo/logo.svg';
+const MotionLink = motion(Link);
 
 const navLinks = [
     { label: 'Company', href: '/company' },
@@ -51,15 +53,15 @@ export default function Header() {
         <header className={styles.header}>
             {/* Logo */}
             <div className={styles.logo}>
-                <a href="/">
+                <Link href="/">
                     <img src={Logo} alt='Yume Prime Logo' />
-                </a>
+                </Link>
             </div>
 
             {/* Desktop Menu */}
             <nav className={styles.menu}>
                 {navLinks.map((link, idx) => (
-                    <a
+                    <Link
                         key={idx}
                         href={link.href}
                         className={`${styles.navItem} ${link.isGold ? styles.goldText : ''}`}
@@ -69,7 +71,7 @@ export default function Header() {
                             <span className={styles.primaryText}>{link.label}</span>
                             <span className={styles.secondaryText}>{link.label}</span>
                         </span>
-                    </a>
+                    </Link>
                 ))}
                 {/* <Button text="Open Live Account" /> */}
             </nav>
@@ -110,7 +112,9 @@ export default function Header() {
                         >
                             <div className={styles.drawerHeader}>
                                 <div className={styles.drawerLogo}>
-                                    <img src={Logo} alt='Yume Prime Logo' />
+                                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                                        <img src={Logo} alt='Yume Prime Logo' />
+                                    </Link>
                                 </div>
                                 <button
                                     className={styles.closeBtn}
@@ -123,9 +127,9 @@ export default function Header() {
                                 </button>
                             </div>
 
-                            <div className={styles.drawerNav}>
+                            <div className={styles.drawerNav} onClick={() => setIsMobileMenuOpen(false)}>
                                 {navLinks.map((link, idx) => (
-                                    <motion.a
+                                    <MotionLink
                                         key={idx}
                                         href={link.href}
                                         className={link.isGold ? styles.goldText : ''}
@@ -135,7 +139,7 @@ export default function Header() {
                                         transition={{ duration: 0.3, delay: 0.05 + idx * 0.04 }}
                                     >
                                         {link.label}
-                                    </motion.a>
+                                    </MotionLink>
                                 ))}
                             </div>
 
@@ -154,4 +158,5 @@ export default function Header() {
         </header>
     );
 }
+
 
