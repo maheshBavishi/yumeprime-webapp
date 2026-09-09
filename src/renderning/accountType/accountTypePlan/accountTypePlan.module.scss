@@ -1,0 +1,174 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.accountTypePlan {
+    padding: 120px 0;
+
+    @include respond-to("lg") {
+        padding: 80px 0;
+    }
+
+    @include respond-to("tab") {
+        padding: 60px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 40px 0;
+    }
+
+    .planGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+
+        @include respond-to("tab") {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+    }
+
+    .planCard {
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        border-right: 1px solid rgba(11, 22, 56, 0.12);
+        transition: box-shadow 0.3s ease, background-color 0.3s ease;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+            border-right: none;
+        }
+
+        @include respond-to("tab") {
+            border-right: none;
+            border-bottom: 1px solid rgba(11, 22, 56, 0.12);
+            padding: 0 0 40px 0 !important;
+
+            &:last-child {
+                border-bottom: none;
+                padding-bottom: 0 !important;
+            }
+        }
+
+        .cardHeader {
+            h2 {
+                color: var(--Midnight-Navy, #0B1638);
+                font-size: 48px;
+                font-weight: 500;
+                line-height: 90%;
+                letter-spacing: -2.4px;
+                font-family: "BeVietnam-Regular";
+                margin: 0 0 30px 0;
+
+                @include respond-to("lg") {
+                    font-size: 40px;
+                    letter-spacing: -2px;
+                }
+
+                @include respond-to("tab") {
+                    font-size: 34px;
+                    letter-spacing: -1.7px;
+                    margin-bottom: 20px;
+                }
+
+                @include respond-to("sm") {
+                    font-size: 28px;
+                    letter-spacing: -1.4px;
+                }
+            }
+
+            p {
+                color: var(--Midnight-Navy, #0B1638);
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+
+                @include respond-to("sm") {
+                    font-size: 14.5px;
+                }
+            }
+        }
+
+        .divider {
+            height: 1px;
+            background-color: rgba(11, 22, 56, 0.1);
+            margin: 30px 0;
+            width: 100%;
+
+            @include respond-to("sm") {
+                margin: 20px 0;
+            }
+        }
+
+        .specsList {
+            display: flex;
+            flex-direction: column;
+
+            .specRow {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 14px 0;
+                border-bottom: 1px dashed rgba(11, 22, 56, 0.1);
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                .label {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 13px;
+                    font-weight: 600;
+                    line-height: normal;
+                    letter-spacing: 1.3px;
+                    text-transform: uppercase;
+
+                    @include respond-to("sm") {
+                        font-size: 12px;
+                    }
+                }
+
+                .value {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 500;
+                    text-align: right;
+                    max-width: 210px;
+                    line-height: normal;
+
+                    @include respond-to("sm") {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .badgeWrapper {
+            margin-top: 32px;
+
+            .badge {
+                color: var(--Midnight-Navy, #0B1638);
+                font-size: 16px;
+                font-style: italic;
+                font-weight: 400;
+                padding: 12px 20px;
+                line-height: normal;
+                background: var(--Gradient, linear-gradient(180deg, #C59E63 0%, #E3D0A9 100%));
+                text-align: center;
+
+                @include respond-to("sm") {
+                    font-size: 14px;
+                    padding: 10px 16px;
+                }
+            }
+        }
+    }
+}

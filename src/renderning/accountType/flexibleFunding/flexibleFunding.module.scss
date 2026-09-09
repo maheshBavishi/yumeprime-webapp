@@ -1,0 +1,159 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.flexibleFunding {
+    padding: 96px 0;
+
+    @include respond-to("lg") {
+        padding: 72px 0;
+    }
+
+    @include respond-to("tab") {
+        padding: 56px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 40px 0;
+    }
+
+    h2 {
+        color: var(--Midnight-Navy, #0B1638);
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 90%;
+        letter-spacing: -3.2px;
+        margin: 0 0 64px 0;
+        font-family: "BeVietnam-Regular";
+
+        @include respond-to("lg") {
+            font-size: 48px;
+            letter-spacing: -2.4px;
+            margin-bottom: 48px;
+        }
+
+        @include respond-to("tab") {
+            font-size: 38px;
+            letter-spacing: -1.8px;
+            margin-bottom: 36px;
+        }
+
+        @include respond-to("sm") {
+            font-size: 28px;
+            letter-spacing: -1.4px;
+            margin-bottom: 24px;
+        }
+    }
+
+    .tableWrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 12px;
+
+        &::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(11, 22, 56, 0.2);
+            border-radius: 3px;
+        }
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 680px;
+
+        thead {
+            tr {
+                background: var(--Midnight-Navy, #0B1638);
+
+                th {
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 20px;
+                    font-weight: 500;
+                    text-align: left;
+                    padding: 20px;
+                    font-family: "BeVietnam-Medium", sans-serif;
+                    border-right: 1px solid rgba(255, 255, 255, 0.2);
+
+                    &:last-child {
+                        border-right: none;
+                    }
+
+                    @include respond-to("lg") {
+                        font-size: 18px;
+                        padding: 20px 24px;
+                    }
+
+                    @include respond-to("sm") {
+                        font-size: 16px;
+                        padding: 16px 20px;
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                background: rgba(11, 22, 56, 0.03);
+                border-bottom: 1px solid rgba(11, 22, 56, 0.15);
+                transition: background 0.25s ease;
+
+                &:hover {
+                    background: rgba(11, 22, 56, 0.07);
+                }
+
+                td {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding: 20px;
+                    border-right: 1px solid rgba(11, 22, 56, 0.12);
+
+                    &:last-child {
+                        border-right: none;
+                    }
+
+                    @include respond-to("lg") {
+                        font-size: 15px;
+                        padding: 18px 24px;
+                    }
+
+                    @include respond-to("sm") {
+                        font-size: 14px;
+                        padding: 14px 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .tradingHoursNote {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 48px;
+
+        @include respond-to("tab") {
+            margin-top: 32px;
+            gap: 12px;
+        }
+
+        .checkCircle {
+
+            svg {
+                display: block;
+            }
+        }
+
+        p {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
+}

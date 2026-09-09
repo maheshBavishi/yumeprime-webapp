@@ -1,0 +1,86 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.accountTypeBanner {
+    padding: 350px 0 64px;
+
+    @include respond-to("lg") {
+        padding: 240px 0 48px;
+    }
+
+    @include respond-to("tab") {
+        padding: 160px 0 40px;
+    }
+
+    @include respond-to("sm") {
+        padding: 120px 0 32px;
+    }
+
+    .contetAlignment {
+        padding: 0 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 32px;
+
+        @include respond-to("lg") {
+            padding: 0 32px;
+        }
+
+        @include respond-to("tab") {
+            padding: 0 20px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        h1 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-family: "BeVietnam-Regular";
+            font-size: 96px;
+            font-weight: 400;
+            max-width: 800px;
+            line-height: 90%;
+            letter-spacing: -4.8px;
+
+            @include respond-to("lg") {
+                font-size: 72px;
+                letter-spacing: -3.6px;
+                max-width: 640px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 48px;
+                letter-spacing: -2.4px;
+                max-width: 100%;
+            }
+
+            @include respond-to("sm") {
+                font-size: 36px;
+                letter-spacing: -1.6px;
+            }
+
+            span {
+                font-weight: 250;
+                font-family: "BeVietnam-ThinItalic";
+            }
+        }
+
+        p {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: normal;
+            max-width: 553px;
+
+            @include respond-to("tab") {
+                font-size: 16px;
+                max-width: 100%;
+            }
+
+            @include respond-to("sm") {
+                font-size: 15px;
+            }
+        }
+    }
+}

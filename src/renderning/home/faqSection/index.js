@@ -11,7 +11,7 @@ const faqList = [
     {
         id: 1,
         question: "Is Yume Prime a regulated broker?",
-        answer: "Yes, Yume Prime operates in full compliance with international financial regulatory standards, maintaining segregated client accounts to ensure complete fund safety and transparency.",
+        answer: "Yes, Yume Prime operates in full compliance with international financial standards, maintaining segregated client accounts to ensure complete fund safety and transparency.",
     },
     {
         id: 2,

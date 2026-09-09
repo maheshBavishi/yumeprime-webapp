@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './cardSection.module.scss';
 import Button from '@/components/button';
+import Link from 'next/link';
 
 const Trading = '/assets/images/Trading.png';
 const Introducing = '/assets/images/Introducing.png';
@@ -16,6 +17,7 @@ const cardsData = [
         title: 'Trading Solutions',
         description: 'Copy top-performing strategies with Social Trading, or invest passively through PAMM.',
         buttonText: 'Explore Trading Solutions',
+        link: '/trading-platforms',
     },
     {
         id: 'ib-programme',
@@ -24,6 +26,7 @@ const cardsData = [
         title: 'Introducing Broker Programme',
         description: 'Earn up to 80% commission rebate share with instant IB activation and instant withdrawals.',
         buttonText: 'Become an IB',
+        link: '/',
     },
     {
         id: 'trade-and-win',
@@ -32,6 +35,7 @@ const cardsData = [
         title: 'Trade & Win',
         description: 'Trade eligible instruments, accumulate lot volume, unlock milestone rewards.',
         buttonText: 'View Rewards',
+        link: '/',
     },
 ];
 
@@ -110,7 +114,7 @@ export default function CardSection() {
                                     whileTap={{ scale: 0.98 }}
                                     transition={{ duration: 0.2 }}
                                 >
-                                    <Button text={card.buttonText} fill />
+                                    <Button text={card.buttonText} fill href={card.link} />
                                 </motion.div>
                             </div>
                         </motion.div>
@@ -120,5 +124,6 @@ export default function CardSection() {
         </section>
     );
 }
+
 
 

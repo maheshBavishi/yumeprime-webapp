@@ -1,0 +1,149 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+
+.whatIsTrading {
+    background: var(--Midnight-Navy, #0B1638);
+    padding: 0 0 420px 0;
+
+    @include respond-to("lg") {
+        padding: 0 0 300px 0;
+    }
+
+    @include respond-to("tab") {
+        padding: 0 0 200px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 0 0 210px 0;
+    }
+
+    .contentGrid {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 96px 0 0 0;
+        gap: 32px;
+
+        @include respond-to("lg") {
+            padding: 72px 0 0 0;
+        }
+
+        @include respond-to("tab") {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 48px 0 0 0;
+            gap: 24px;
+        }
+
+        .imgwidth {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            height: auto;
+
+            @include respond-to("tab") {
+                max-width: 100%;
+            }
+        }
+
+        h2 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 64px;
+            font-weight: 400;
+            letter-spacing: -3.2px;
+            font-family: "BeVietnam-Regular";
+            line-height: 1.15;
+
+            @include respond-to("lg") {
+                font-size: 48px;
+                letter-spacing: -2.4px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 38px;
+                letter-spacing: -1.8px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 28px;
+                letter-spacing: -1.4px;
+            }
+
+            &.maxwidth {
+                max-width: 420px;
+
+                @include respond-to("tab") {
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+
+    .line {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .textAllContent {
+        padding: 116px 75px;
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+
+        @include respond-to("lg") {
+            padding: 80px 48px;
+        }
+
+        @include respond-to("tab") {
+            padding: 56px 28px;
+        }
+
+        @include respond-to("sm") {
+            padding: 36px 16px;
+        }
+
+        .buttonAlignment {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @include respond-to("sm") {
+                flex-direction: column;
+                width: 100%;
+
+                > div {
+                    width: 100%;
+                    button {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+
+        p {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.35;
+            margin: 0 0 48px 0;
+
+            @include respond-to("lg") {
+                font-size: 26px;
+                margin-bottom: 36px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 21px;
+                margin-bottom: 28px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 17px;
+                margin-bottom: 24px;
+            }
+
+            span {
+                color: #C9A45C;
+            }
+        }
+    }
+}

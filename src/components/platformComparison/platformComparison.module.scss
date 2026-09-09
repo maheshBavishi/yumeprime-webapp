@@ -1,0 +1,186 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+
+
+.platformComparison {
+    background: var(--Midnight-Navy, #0B1638);
+    padding: 96px 0;
+
+    @include respond-to("lg") {
+        padding: 72px 0;
+    }
+
+    @include respond-to("tab") {
+        padding: 56px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 40px 0;
+    }
+
+    h2 {
+        color: var(--Ivory-White, #F7F4EC);
+        font-size: 64px;
+        font-weight: 400;
+        margin: 0 0 64px 0;
+        line-height: 90%;
+        letter-spacing: -3.2px;
+        font-family: "BeVietnam-Regular", sans-serif;
+
+        @include respond-to("lg") {
+            font-size: 48px;
+            letter-spacing: -2.4px;
+            margin-bottom: 48px;
+        }
+
+        @include respond-to("tab") {
+            font-size: 38px;
+            letter-spacing: -1.8px;
+            margin-bottom: 36px;
+        }
+
+        @include respond-to("sm") {
+            font-size: 28px;
+            letter-spacing: -1.4px;
+            margin-bottom: 24px;
+        }
+    }
+
+    .tableWrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+        padding-bottom: 12px;
+
+        &::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+        }
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 680px;
+        border: 1px solid rgba(243, 243, 245, 0.15);
+
+        @include respond-to("sm") {
+            min-width: 540px;
+        }
+
+        thead {
+            tr {
+                th {
+                    background: #FFFFFF;
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 22px;
+                    font-weight: 500;
+                    font-family: "BeVietnam-Medium", sans-serif;
+                    line-height: 1.1;
+                    text-align: left;
+                    padding: 18px 20px;
+                    letter-spacing: -0.8px;
+                    border-right: 1px solid rgba(11, 22, 56, 0.18);
+
+                    &:last-child {
+                        border-right: none;
+                    }
+
+                    @include respond-to("lg") {
+                        font-size: 20px;
+                        padding: 16px 20px;
+                    }
+
+                    @include respond-to("tab") {
+                        font-size: 17px;
+                        padding: 14px 16px;
+                    }
+
+                    @include respond-to("sm") {
+                        font-size: 15px;
+                        padding: 12px 14px;
+                        letter-spacing: -0.4px;
+                    }
+
+                    &:first-child {
+                        @include respond-to("tab") {
+                            position: sticky;
+                            left: 0;
+                            z-index: 10;
+                            background: #FFFFFF;
+                            box-shadow: 4px 0 12px rgba(0, 0, 0, 0.35);
+                        }
+                    }
+                }
+            }
+        }
+
+        tbody {
+            tr {
+                border-bottom: 1px solid rgba(243, 243, 245, 0.10);
+                transition: background 0.2s ease;
+
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.03);
+                }
+
+                td {
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 15px;
+                    font-style: normal;
+                    padding: 18px 20px;
+                    font-weight: 500;
+                    line-height: 1.4;
+                    border-right: 1px solid rgba(243, 243, 245, 0.15);
+
+                    &:last-child {
+                        border-right: none;
+                    }
+
+                    @include respond-to("lg") {
+                        font-size: 15px;
+                        padding: 16px 20px;
+                    }
+
+                    @include respond-to("tab") {
+                        font-size: 14.5px;
+                        padding: 14px 16px;
+                    }
+
+                    @include respond-to("sm") {
+                        font-size: 13.5px;
+                        padding: 12px 14px;
+                    }
+
+                    &:first-child {
+                        color: var(--Ivory-White, #F7F4EC);
+                        font-size: 16px;
+                        font-weight: 500;
+                        opacity: 0.95;
+
+                        @include respond-to("tab") {
+                            position: sticky;
+                            left: 0;
+                            z-index: 10;
+                            background: #0B1638;
+                            box-shadow: 4px 0 12px rgba(0, 0, 0, 0.35);
+                        }
+
+                        @include respond-to("sm") {
+                            font-size: 13.5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

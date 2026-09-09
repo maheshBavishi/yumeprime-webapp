@@ -1,0 +1,181 @@
+@use '../../scss/main.scss' as *;
+@use '../../scss/breakpoints/breakpoints.scss' as *;
+
+.tradeSection {
+    padding: 96px 0;
+
+    @include respond-to("lg") {
+        padding: 72px 0;
+    }
+
+    @include respond-to("tab") {
+        padding: 56px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 40px 0;
+    }
+
+    .sectionHeader {
+        display: flex;
+        align-items: flex-end;
+        padding: 0 0 64px 0;
+        justify-content: space-between;
+        gap: 32px;
+
+        @include respond-to("lg") {
+            padding-bottom: 48px;
+            gap: 24px;
+        }
+
+        @include respond-to("tab") {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            padding-bottom: 40px;
+        }
+
+        > div:last-child {
+            @include respond-to("sm") {
+                width: 100%;
+
+                button {
+                    width: 100%;
+                    justify-content: center;
+                }
+            }
+        }
+
+        h2 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 90%;
+            font-family: "BeVietnam-Regular", sans-serif;
+            margin: 0 0 48px 0;
+            letter-spacing: -3.2px;
+
+            @include respond-to("lg") {
+                font-size: 48px;
+                letter-spacing: -2.4px;
+                margin-bottom: 32px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 38px;
+                letter-spacing: -1.8px;
+                margin-bottom: 24px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 28px;
+                letter-spacing: -1.4px;
+                margin-bottom: 16px;
+            }
+        }
+
+        p {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 18px;
+            max-width: 646px;
+            font-weight: 500;
+            line-height: 1.5;
+
+            @include respond-to("tab") {
+                font-size: 16px;
+                max-width: 100%;
+            }
+
+            @include respond-to("sm") {
+                font-size: 14.5px;
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 680px;
+        gap: 40px;
+        align-items: center;
+
+        @include respond-to("lg") {
+            grid-template-columns: 1fr 500px;
+            gap: 32px;
+        }
+
+        @include respond-to("md") {
+            grid-template-columns: 1fr 420px;
+            gap: 24px;
+        }
+
+        @include respond-to("tab") {
+            grid-template-columns: 1fr;
+            gap: 36px;
+        }
+
+        .items {
+            &:last-child {
+                @include respond-to("tab") {
+                    order: -1;
+                }
+            }
+        }
+
+        .content {
+            padding: 16px;
+            border-bottom: 1px solid rgba(11, 22, 56, 0.15);
+            display: grid;
+            grid-template-columns: 48px 1fr;
+            gap: 16px;
+            align-items: center;
+            cursor: pointer;
+            transition: border-color 0.2s ease, background 0.2s ease;
+
+            @include respond-to("sm") {
+                padding: 14px 10px;
+                grid-template-columns: 36px 1fr;
+                gap: 12px;
+            }
+
+            &:first-child {
+                border-top: 1px solid rgba(11, 22, 56, 0.15);
+            }
+
+            svg {
+                flex-shrink: 0;
+                width: 44px;
+                height: 44px;
+
+                @include respond-to("sm") {
+                    width: 34px;
+                    height: 34px;
+                }
+            }
+
+            span {
+                color: var(--Midnight-Navy, #0B1638);
+                font-size: 17px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: 1.45;
+
+                @include respond-to("tab") {
+                    font-size: 15.5px;
+                }
+
+                @include respond-to("sm") {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+    }
+}
