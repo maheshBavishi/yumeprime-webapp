@@ -52,7 +52,7 @@ export default function RegulatoryStatement() {
         viewport={{ once: true, margin: '-60px' }}
         variants={containerVariants}
       >
-        <motion.h2 variants={fadeInUp}>
+        {/* <motion.h2 variants={fadeInUp}>
           Regulatory Statement
         </motion.h2>
 
@@ -64,7 +64,7 @@ export default function RegulatoryStatement() {
         <motion.p variants={fadeInUp}>
           Client funds are held in segregated accounts, separate from company operating capital.
           [Finalise exact regulatory wording with your compliance team before publishing.]
-        </motion.p>
+        </motion.p> */}
 
         <motion.div className={styles.buttonCenter} variants={fadeInUp}>
           <Button text="Open an Account" />
