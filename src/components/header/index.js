@@ -71,7 +71,10 @@ const navLinks = [
     { label: 'Company', href: '/company' },
     { label: 'Markets', href: '/markets' },
     { label: 'Account Types', href: '/account-type' },
-    { label: 'Contact Us', href: '/contact' },
+    { label: 'Trading Platforms', href: '/trading-platforms' },
+    { label: 'Trading Solutions', href: '/trading-solutions' },
+    { label: 'Trade & Win 🏆', href: '/trade-win' },
+    { label: 'Blog', href: '/blog' },
 ];
 
 export default function Header() {
@@ -79,7 +82,13 @@ export default function Header() {
     const [isMarketsHovered, setIsMarketsHovered] = useState(false);
     const [isMobileMarketsOpen, setIsMobileMarketsOpen] = useState(false);
     const pathname = usePathname();
-    const isDarkHeader = pathname === '/account-type' || pathname?.startsWith('/account-type') || pathname === '/trading-platforms' || pathname?.startsWith('/trading-platforms');
+    const isDarkHeader = pathname === '/account-type' || pathname?.startsWith('/account-type')
+        || pathname === '/trading-platforms' || pathname?.startsWith('/trading-platforms')
+        || pathname === '/blog' || pathname?.startsWith('/blog')
+        || pathname === '/blog-details' || pathname?.startsWith('/blog-details')
+        || pathname === '/mobileapp' || pathname?.startsWith('/mobileapp')
+        || pathname === '/webtrader' || pathname?.startsWith('/webtrader')
+        || pathname === '/faq' || pathname?.startsWith('/faq');
 
     // Lock body scroll when mobile menu is open
     useEffect(() => {

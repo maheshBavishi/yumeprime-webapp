@@ -1,0 +1,168 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.rebateStructure {
+    margin-top: -260px;
+    padding-bottom: 120px;
+    position: relative;
+    z-index: 2;
+
+    @include respond-to("lg") {
+        margin-top: -180px;
+        padding-bottom: 96px;
+    }
+
+    @include respond-to("md") {
+        margin-top: -120px;
+        padding-bottom: 80px;
+    }
+
+    @include respond-to("tab") {
+        margin-top: -40px;
+        padding-bottom: 60px;
+    }
+
+    @include respond-to("sm") {
+        margin-top: 0;
+        padding-bottom: 48px;
+    }
+
+    .title {
+        padding: 0 0 64px 0;
+
+        @include respond-to("lg") {
+            padding: 0 0 48px 0;
+        }
+
+        @include respond-to("tab") {
+            padding: 0 0 32px 0;
+        }
+
+        h2 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 90%;
+            font-family: "BeVietnam-Regular";
+            letter-spacing: -3.2px;
+
+            @include respond-to("lg") {
+                font-size: 52px;
+                letter-spacing: -2px;
+            }
+
+            @include respond-to("md") {
+                font-size: 42px;
+                letter-spacing: -1.5px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 36px;
+                letter-spacing: -1px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 28px;
+            }
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+
+        @include respond-to("md") {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include respond-to("tab") {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .items {
+            overflow: hidden;
+            background: rgba(11, 22, 56, 0.05);
+
+            .imageBox {
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+
+                }
+            }
+
+            .details {
+
+                padding: 0 20px;
+
+                @include respond-to("sm") {
+                    padding: 16px;
+                }
+
+                .text {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 12px 0;
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+
+                    p {
+                        opacity: 0.6;
+                        color: var(--Midnight-Navy, #0B1638);
+                        font-size: 13px;
+                        font-weight: 600;
+                        line-height: normal;
+                        letter-spacing: 1.3px;
+                        text-transform: uppercase;
+                        margin: 0;
+
+                        @include respond-to("sm") {
+                            font-size: 11px;
+                        }
+                    }
+
+                    span {
+                        color: var(--Midnight-Navy, #0B1638);
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 500;
+                        display: block;
+                        line-height: normal;
+                        font-family: "BeVietnam-Regular";
+
+                        @include respond-to("sm") {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .noticeBar {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 48px 0 120px 0;
+        border-bottom: 1px solid rgb(11, 22, 56, .15);
+
+        svg {
+            flex-shrink: 0;
+        }
+
+        p {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
+}

@@ -38,6 +38,7 @@ export default function PlatformBanner({
                                     fill={btn.fill}
                                     lightButton={btn.lightButton}
                                     secondaryBtn={btn.secondaryBtn}
+                                    href={btn.href || btn.link}
                                 />
                             ))}
                         </div>

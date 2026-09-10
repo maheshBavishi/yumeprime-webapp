@@ -138,7 +138,8 @@ export default function Footer() {
                             <li><Link href="/company">About Us</Link></li>
                             {/* <li><Link href="#">Why Yume Prime</Link></li> */}
                             <li><Link href="/contact">Contact Us</Link></li>
-                            {/* <li><Link href="#">Blog</Link></li> */}
+                            <li><Link href="/faq">Faq</Link></li>
+                            <li><Link href="/blog">Blog</Link></li>
                         </ul>
                     </div>
 
@@ -146,31 +147,31 @@ export default function Footer() {
                         <h4>Trading</h4>
                         <ul>
                             <li><Link href="/markets">Markets</Link></li>
-                            <li><Link href="/account-types">Account Types</Link></li>
+                            <li><Link href="/account-type">Account Types</Link></li>
                             <li><Link href="/trading-platforms">Trading Platforms</Link></li>
-                            {/* <li><a href="#">Trading Solutions</a></li>
-                            <li><a href="#">Trade & Win</a></li> */}
+                            <li><Link href="/trading-solutions">Trading Solutions</Link></li>
+                            <li><Link href="/trade-win">Trade & Win</Link></li>
                         </ul>
                     </div>
 
-                    {/* <div className={styles.navCol}>
+                    <div className={styles.navCol}>
                         <h4>Partners</h4>
                         <ul>
-                            <li><a href="#">Introducing Broker Programme</a></li>
-                            <li><a href="#">Partner Login</a></li>
+                            <li><Link href="/introducing-broker">Introducing Broker <br /> Programme</Link></li>
+                            {/* <li><Link href="/partner-login">Partner Login</Link></li> */}
                         </ul>
-                    </div> */}
+                    </div>
 
-                    {/* <div className={styles.navCol}>
+                    <div className={styles.navCol}>
                         <h4>Legal</h4>
                         <ul>
-                            <li><a href="#">Risk Disclosure</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Client Agreement</a></li>
-                            <li><a href="#">AML/KYC Policy</a></li>
-                            <li><a href="#">Restricted Countries</a></li>
+                            <li><Link href="/risk-disclosure">Risk Disclosure</Link></li>
+                            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+                            <li><Link href="/client-agreement">Client Agreement</Link></li>
+                            <li><Link href="/kyc-policy">AML/KYC Policy</Link></li>
+                            <li><Link href="/restricted-countries">Restricted Countries</Link></li>
                         </ul>
-                    </div> */}
+                    </div>
 
                     <div className={styles.navCol}>
                         <h4>Contact Details</h4>

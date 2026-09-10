@@ -1,0 +1,89 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.tradingType {
+    border-bottom: 1px solid rgba(23, 37, 79, 0.15);
+
+    .allBox {
+        border-left: 1px solid rgba(23, 37, 79, 0.15);
+        padding: 96px 74px;
+        border-right: 1px solid rgba(23, 37, 79, 0.15);
+
+        .box {
+            border-bottom: 1px solid #0B1638;
+            display: grid;
+            grid-template-columns: 1fr 360px 1fr;
+            margin: 0 0 48px 0;
+            gap: 0px;
+            background: linear-gradient(180deg, rgba(11, 22, 56, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%);
+
+            &:last-child {
+                margin: 0;
+            }
+
+            .right {
+                display: flex;
+                align-items: center;
+            }
+
+            .iconText {
+                display: grid;
+                grid-template-columns: 50px 1fr;
+                align-items: center;
+                gap: 12px;
+                padding: 0 0 24px 0;
+
+                &:last-child {
+                    padding: 0;
+                }
+
+                span {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    display: block;
+
+                }
+            }
+
+            .left {
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                h2 {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 32px;
+                    font-weight: 500;
+                    line-height: 90%;
+                    letter-spacing: -1.6px;
+                    font-family: "BeVietnam-Medium";
+                    margin: 0 0 32px 0;
+                }
+
+                p {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+
+                .btn {
+                    width: fit-content;
+                }
+
+
+
+                .center {
+                    img {
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

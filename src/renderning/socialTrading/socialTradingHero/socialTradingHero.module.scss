@@ -1,0 +1,70 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.socialTradingHero {
+    background: var(--Midnight-Navy, #0B1638);
+    position: relative;
+    padding: 450px 0 64px 0;
+    overflow: hidden;
+
+    @include respond-to("lg") {
+        padding: 340px 0 56px 0;
+    }
+
+    @include respond-to("tab") {
+        padding: 240px 0 48px 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 120px 0 40px 0;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 634px;
+        opacity: 0.5;
+        background: #1F2EDB;
+        filter: blur(200px);
+        width: 400px;
+        height: 400px;
+        content: '';
+
+        @include respond-to("tab") {
+            width: 250px;
+            height: 250px;
+            filter: blur(120px);
+        }
+    }
+
+    .sectionAlignment {
+        padding: 0 48px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        p {
+            max-width: 437px;
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: normal;
+        }
+
+        h1 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 96px;
+            font-weight: 400;
+            line-height: 90%;
+            letter-spacing: -4.8px;
+            font-family: "BeVietnam-Regular";
+
+            span {
+                font-weight: 250;
+                font-family: "BeVietnam-ThinItalic";
+
+            }
+        }
+    }
+}

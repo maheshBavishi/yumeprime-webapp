@@ -1,0 +1,28 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.insights {
+    background: var(--Midnight-Navy, #0B1638);
+    padding: 120px 0;
+
+    h2 {
+        color: var(--Ivory-White, #F7F4EC);
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 90%;
+        letter-spacing: -3.2px;
+        font-family: "BeVietnam-Regular";
+        margin: 0 0 48px 0;
+
+        span {
+            font-family: "BeVietnam-ThinItalic";
+            font-weight: 250;
+        }
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+}

@@ -89,6 +89,8 @@ export default function PlatformComparison({
                             {rows.map((row, rIdx) => {
                                 const cells = Array.isArray(row)
                                     ? row
+                                    : typeof row === 'object' && row !== null
+                                    ? Object.values(row)
                                     : [row.feature, row.mt5, row.webTrader, row.mobileApp];
                                 return (
                                     <motion.tr key={rIdx} variants={rowVariants}>

@@ -14,9 +14,9 @@ const platformBannerData = {
     titleSpan: 'your terms.',
     description: 'One account. Every device. Full execution power wherever you are.',
     buttons: [
-        { text: 'MetaTrader 5 (MT5)', lightButton: true },
-        { text: 'WebTrader', fill: true },
-        { text: 'Mobile App', lightButton: true },
+        { text: 'MetaTrader 5 (MT5)', fill: true, link: '/trading-platforms' },
+        { text: 'WebTrader', lightButton: true, link: '/webtrader' },
+        { text: 'Mobile App', lightButton: true, link: '#' },
     ],
 };
 

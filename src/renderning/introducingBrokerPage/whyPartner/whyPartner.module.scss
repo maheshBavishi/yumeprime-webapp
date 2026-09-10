@@ -1,0 +1,68 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.whyPartner {
+    padding: 0 0 96px 0;
+
+    h2 {
+        color: var(--Midnight-Navy, #0B1638);
+        font-size: 64px;
+        font-weight: 400;
+        line-height: 90%;
+        letter-spacing: -3.2px;
+        max-width: 479px;
+        margin: 0 0 64px 0;
+        font-family: "BeVietnam-Regular";
+    }
+
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    .grid {
+        display: grid;
+        gap: 24px;
+        padding: 48px 0 0 0;
+        grid-template-columns: repeat(4, 1fr);
+
+        .items {
+
+            &:nth-child(2) {
+                .box {
+                    gap: 172px;
+                }
+            }
+
+            &:nth-child(3) {
+                .box {
+                    gap: 132px;
+                }
+            }
+
+            &:last-child {
+                .box {
+                    gap: 114px;
+                }
+            }
+
+            .box {
+                border-top: 1px solid var(--Midnight-Navy, #0B1638);
+                border-bottom: 2px solid var(--Midnight-Navy, #0B1638);
+                background: linear-gradient(180deg, rgba(11, 22, 56, 0.05) 0%, rgba(255, 255, 255, 0.00) 100%);
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 168px;
+
+                p {
+                    color: var(--Midnight-Navy, #0B1638);
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: normal;
+                }
+            }
+        }
+    }
+}

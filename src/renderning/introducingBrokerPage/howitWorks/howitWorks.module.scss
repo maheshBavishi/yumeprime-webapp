@@ -1,0 +1,185 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.howitWorks {
+    padding: 96px 0 340px 0;
+    background: var(--Midnight-Navy, #0B1638);
+
+
+
+    .title {
+        padding: 0 0 96px 0;
+
+        @include respond-to("lg") {
+            padding: 0 0 64px 0;
+        }
+
+        @include respond-to("tab") {
+            padding: 0 0 40px 0;
+        }
+
+        h2 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 90%;
+            letter-spacing: -3.2px;
+            font-family: "BeVietnam-Regular";
+
+            @include respond-to("lg") {
+                font-size: 52px;
+                letter-spacing: -2px;
+            }
+
+            @include respond-to("md") {
+                font-size: 42px;
+                letter-spacing: -1.5px;
+            }
+
+            @include respond-to("tab") {
+                font-size: 36px;
+                letter-spacing: -1px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 28px;
+            }
+        }
+    }
+
+    .line {
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .grid {
+        padding: 96px 76px;
+        border-left: 1px solid rgba(255, 255, 255, 0.15);
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
+        display: grid;
+        grid-template-columns: 512px 1fr;
+        gap: 48px;
+
+        @include respond-to("lg") {
+            padding: 80px 48px;
+            grid-template-columns: 400px 1fr;
+            gap: 32px;
+        }
+
+        @include respond-to("md") {
+            padding: 60px 32px;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @include respond-to("tab") {
+            padding: 48px 20px;
+            border-left: none;
+            border-right: none;
+            gap: 32px;
+        }
+
+        @include respond-to("sm") {
+            padding: 40px 16px;
+        }
+
+        .img {
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+
+        .boxgrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0px;
+
+            @include respond-to("tab") {
+                grid-template-columns: 1fr;
+            }
+
+            .box {
+                border-bottom: 1px solid rgba(247, 244, 236, 0.15);
+                border-right: 1px solid rgba(247, 244, 236, 0.15);
+                background: rgba(255, 255, 255, 0.05);
+                padding: 40px;
+                transition: background 0.3s ease, transform 0.3s ease;
+
+                @include respond-to("lg") {
+                    padding: 32px 24px;
+                }
+
+                @include respond-to("tab") {
+                    border-right: 0;
+                    padding: 28px 20px;
+                }
+
+                @include respond-to("sm") {
+                    padding: 24px 16px;
+                }
+
+                &:nth-child(2),
+                &:last-child {
+                    border-right: 0;
+                }
+
+                h3 {
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 18px;
+                    margin: 0 0 32px 0;
+                    font-weight: 500;
+                    line-height: normal;
+
+                    @include respond-to("tab") {
+                        margin-bottom: 20px;
+                    }
+
+                    @include respond-to("sm") {
+                        font-size: 16px;
+                    }
+                }
+
+                p {
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    opacity: 0.7;
+
+                    @include respond-to("sm") {
+                        font-size: 14px;
+                    }
+                }
+
+                .boxheader {
+                    display: flex;
+                    align-items: center;
+                    padding: 0 0 36px 0;
+                    justify-content: space-between;
+
+                    @include respond-to("tab") {
+                        padding-bottom: 24px;
+                    }
+
+                    .counter {
+                        background: var(--Gradient, linear-gradient(180deg, #C59E63 0%, #E3D0A9 100%));
+                        width: 45px;
+                        height: 45px;
+                        color: var(--Midnight-Navy, #0B1638);
+                        font-size: 13px;
+                        font-weight: 700;
+                        line-height: normal;
+                        letter-spacing: 0.65px;
+                        text-transform: uppercase;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+}

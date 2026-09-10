@@ -26,7 +26,7 @@ const cardsData = [
         title: 'Introducing Broker Programme',
         description: 'Earn up to 80% commission rebate share with instant IB activation and instant withdrawals.',
         buttonText: 'Become an IB',
-        link: '/',
+        link: '/introducing-broker',
     },
     {
         id: 'trade-and-win',
@@ -35,7 +35,7 @@ const cardsData = [
         title: 'Trade & Win',
         description: 'Trade eligible instruments, accumulate lot volume, unlock milestone rewards.',
         buttonText: 'View Rewards',
-        link: '/',
+        link: '/trade-win',
     },
 ];
 
