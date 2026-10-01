@@ -168,7 +168,7 @@ export default function AccountStage() {
                 </div>
 
                 <div className={styles.buttonTop}>
-                    <Button text="Compare all accounts" fill />
+                    <Button text="Compare all accounts" fill href="/account-type" />
                 </div>
             </div>
         </section>

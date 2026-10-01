@@ -88,8 +88,10 @@ export default function YourTrade() {
                         Every market you want, within one Yume Prime account.
                     </motion.h3>
                     <motion.div className={styles.btnWrap} variants={fadeInUp}>
-                        <Button text="Open Live Account" fill />
-                        <Button text="Try Demo Free" lightButton />
+                        <a href='https://portal.yumeprime.com/signin' target='_blank'>
+                            <Button text="Open Live Account" fill  />
+                        </a>
+                        <Button text="Try Demo Free" lightButton href="/contact" />
                     </motion.div>
                 </motion.div>
             </div>

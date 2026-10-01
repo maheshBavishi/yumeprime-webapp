@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './regulatoryStatement.module.scss';
 import Button from '@/components/button';
@@ -67,17 +68,21 @@ export default function RegulatoryStatement() {
         </motion.p> */}
 
         <motion.div className={styles.buttonCenter} variants={fadeInUp}>
-          <Button text="Open an Account" />
+          <Button text="Open an Account" href="/account-type" />
         </motion.div>
 
         <motion.div className={styles.centerText} variants={fadeInUp}>
-          <span>
-            Compare Account Types
-          </span>
+          <Link href="/account-type">
+            <span>
+              Compare Account Types
+            </span>
+          </Link>
           <div className={styles.line}></div>
-          <span>
-            Talk to Us
-          </span>
+          <Link href="/contact">
+            <span>
+              Talk to Us
+            </span>
+          </Link>
         </motion.div>
 
         <motion.div className={styles.video} variants={imageVariants}>

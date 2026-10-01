@@ -103,7 +103,7 @@ export default function BlogDetails() {
                             <h3>Not sure which account fits your trading style?</h3>
                             <p>Compare Standard, Plus, and Pro side by side.</p>
                             <div className={styles.center}>
-                                <Button text="Compare Yume Prime Account Types" fill />
+                                <Button text="Compare Yume Prime Account Types" fill href="/account-type" />
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './fullComparison.module.scss';
 import Button from '@/components/button';
@@ -347,12 +348,14 @@ export default function FullComparison() {
                     </div>
                 </div>
                 <div className={styles.center}>
-                    <Button text="Open a Live Account" />
+                    <Button text="Open a Live Account" href="/contact" />
                 </div>
                 <div className={styles.lastContent}>
                     <span> Not ready yet? </span>
                     <div className={styles.line}></div>
-                    <p> Open a Free Demo Account</p>
+                    <Link href="/contact" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <p> Open a Free Demo Account</p>
+                    </Link>
                 </div>
             </div>
         </div>

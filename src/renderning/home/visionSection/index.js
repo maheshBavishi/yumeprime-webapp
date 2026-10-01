@@ -20,7 +20,7 @@ export default function VisionSection() {
                 </motion.h2>
 
                 {/* Animated Call To Action Button */}
-                <motion.div 
+                <motion.div
                     className={styles.center}
                     initial={{ opacity: 0, y: 25, scale: 0.95 }}
                     whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -29,7 +29,9 @@ export default function VisionSection() {
                     whileHover={{ scale: 1.03, y: -2 }}
                     whileTap={{ scale: 0.97 }}
                 >
-                    <Button text="Open Live account" fill />
+                    <a href='https://portal.yumeprime.com/signin' target='_blank'>
+                        <Button text="Open Live account" fill  />
+                    </a>
                 </motion.div>
             </div>
         </section>

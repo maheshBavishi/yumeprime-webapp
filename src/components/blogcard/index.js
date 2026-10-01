@@ -1,5 +1,4 @@
 'use client';
-import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './blogcard.module.scss';
 import classNames from 'classnames';
@@ -21,11 +20,13 @@ export default function Blogcard({ textwhite }) {
                     Education
                 </span>
                 <h3>
-                    Gold's Rally: What's Really Driving
+                    Gold's Rally: What's Really
+                    Driving
                     Spot Prices Higher
                 </h3>
                 <p>
-                    A weekly breakdown of the macro forces moving XAU/USD.
+                    A weekly breakdown of the macro
+                    forces moving XAU/USD.
                 </p>
                 <div className={styles.line}></div>
                 <Link href="/blog-details">

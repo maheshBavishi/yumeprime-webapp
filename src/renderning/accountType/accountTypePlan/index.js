@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './accountTypePlan.module.scss';
+import Button from '@/components/button';
 
 const plansData = [
     {
@@ -10,7 +11,7 @@ const plansData = [
         description: "Built for traders starting out. Simple spread-only pricing with no separate commission the easiest way to understand exactly what you're paying.",
         specs: [
             { label: 'MINIMUM DEPOSIT', value: '[$50]' },
-            { label: 'SPREADS FROM', value: '[1.2] pips' },
+            { label: 'SPREADS FROM', value: '2 PIP' },
             { label: 'COMMISSION', value: 'None' },
             { label: 'LEVERAGE', value: 'Up to [1:1000]' },
             { label: 'EXECUTION', value: 'Market execution' },
@@ -23,7 +24,7 @@ const plansData = [
         description: 'Our most-used account. Tighter spreads than Standard, with a modest transparent commission built for active traders who trade cost-efficiency alongside simplicity.',
         specs: [
             { label: 'MINIMUM DEPOSIT', value: '[$250]' },
-            { label: 'SPREADS FROM', value: '[0.6] pips' },
+            { label: 'SPREADS FROM', value: '1.5 PIP' },
             { label: 'COMMISSION', value: '[$3] per lot per side' },
             { label: 'LEVERAGE', value: 'Up to [1:500]' },
             { label: 'EXECUTION', value: 'STP, no dealing-desk intervention' },
@@ -36,7 +37,7 @@ const plansData = [
         description: 'Raw, institutional-grade pricing for professionals and high-volume traders. The tightest spreads on the platform, with full order-book depth and priority execution.',
         specs: [
             { label: 'MINIMUM DEPOSIT', value: '[$1,000]' },
-            { label: 'SPREADS FROM', value: '[0.0] pips (raw)' },
+            { label: 'SPREADS FROM', value: '1 PIP' },
             { label: 'COMMISSION', value: '[$3.5] per lot per side' },
             { label: 'LEVERAGE', value: 'Up to [1:200]' },
             { label: 'EXECUTION', value: 'ECN, direct market access' },
@@ -105,6 +106,9 @@ export default function AccountTypePlan() {
                                             <span className={styles.value}>{spec.value}</span>
                                         </div>
                                     ))}
+                                </div>
+                                <div style={{ marginTop: '24px', display: 'flex', justifyContent: 'center' }}>
+                                    <Button text={`Open ${plan.title}`} fill={plan.id === 'pro'} href="/contact" />
                                 </div>
                             </div>
 

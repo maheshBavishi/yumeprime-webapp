@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './tradeTerms.module.scss';
 import Button from '@/components/button';
@@ -120,7 +121,7 @@ export default function TradeTerms() {
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.98 }}
                     >
-                        <Button text="Explore Trading Platforms" />
+                        <Button text="Explore Trading Platforms" href="/trading-platforms" />
                     </motion.div>
                 </div>
 
@@ -160,73 +161,74 @@ export default function TradeTerms() {
                         variants={staggerContainer}
                     >
                         {marketItems.map((item) => (
-                            <motion.div
-                                key={item.id}
-                                className={`${styles.items} ${item.isTransparent ? styles.transparentItem : ''}`}
-                                variants={cardVariant}
-                                whileHover="hover"
-                                initial="rest"
-                                animate="rest"
-                            >
+                            <Link key={item.id} href={'/' + item.id} style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
                                 <motion.div
-                                    className={styles.box}
-                                    variants={{
-                                        rest: { y: 0, borderColor: 'rgba(23, 37, 79, 0.6)' },
-                                        hover: { 
-                                            y: -8, 
-                                            borderColor: 'rgba(197, 158, 99, 0.5)',
-                                            boxShadow: '0 16px 32px -8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(197, 158, 99, 0.15)',
-                                            transition: { duration: 0.3, ease: 'easeOut' } 
-                                        }
-                                    }}
+                                    className={`${styles.items} ${item.isTransparent ? styles.transparentItem : ''}`}
+                                    variants={cardVariant}
+                                    whileHover="hover"
+                                    initial="rest"
+                                    animate="rest"
                                 >
-                                    <motion.img
-                                        src={item.image}
-                                        alt={item.alt}
+                                    <motion.div
+                                        className={styles.box}
                                         variants={{
-                                            rest: { scale: 1 },
-                                            hover: { scale: 1.08, transition: { duration: 0.4, ease: 'easeOut' } }
-                                        }}
-                                    />
-                                </motion.div>
-
-                                <div className={styles.details}>
-                                    <motion.h3
-                                        variants={{
-                                            rest: { color: '#F7F4EC' },
-                                            hover: { color: '#E8D2A7', transition: { duration: 0.25 } }
+                                            rest: { y: 0, borderColor: 'rgba(23, 37, 79, 0.6)' },
+                                            hover: { 
+                                                y: -8, 
+                                                borderColor: 'rgba(197, 158, 99, 0.5)',
+                                                boxShadow: '0 16px 32px -8px rgba(0, 0, 0, 0.4), 0 0 20px rgba(197, 158, 99, 0.15)',
+                                                transition: { duration: 0.3, ease: 'easeOut' } 
+                                            }
                                         }}
                                     >
-                                        {item.title}
-                                    </motion.h3>
-                                    
-                                    <motion.div 
-                                        className={styles.readMoreLink}
-                                        variants={{
-                                            rest: { opacity: 0.4, x: 0 },
-                                            hover: { opacity: 1, x: 3, transition: { duration: 0.25 } }
-                                        }}
-                                    >
-                                        <span>Read more</span>
-                                        <svg 
-                                            className={styles.arrowIcon}
-                                            width="12" 
-                                            height="10" 
-                                            viewBox="0 0 12 10" 
-                                            fill="none" 
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path 
-                                                d="M7 1L11 5M11 5L7 9M11 5H1" 
-                                                stroke="currentColor" 
-                                                strokeWidth="1.5" 
-                                                strokeLinecap="round" 
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
+                                        <motion.img
+                                            src={item.image}
+                                            alt={item.alt}
+                                            variants={{
+                                                rest: { scale: 1 },
+                                                hover: { scale: 1.08, transition: { duration: 0.4, ease: 'easeOut' } }
+                                            }}
+                                        />
                                     </motion.div>
-                                </div>
-                            </motion.div>
+
+                                    <div className={styles.details}>
+                                        <motion.h3
+                                            variants={{
+                                                rest: { color: '#F7F4EC' },
+                                                hover: { color: '#E8D2A7', transition: { duration: 0.25 } }
+                                            }}
+                                        >
+                                            {item.title}
+                                        </motion.h3>
+                                        
+                                        <motion.div 
+                                            className={styles.readMoreLink}
+                                            variants={{
+                                                rest: { opacity: 0.4, x: 0 },
+                                                hover: { opacity: 1, x: 3, transition: { duration: 0.25 } }
+                                            }}
+                                        >
+                                            <span>Read more</span>
+                                            <svg 
+                                                className={styles.arrowIcon}
+                                                width="12" 
+                                                height="10" 
+                                                viewBox="0 0 12 10" 
+                                                fill="none" 
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path 
+                                                    d="M7 1L11 5M11 5L7 9M11 5H1" 
+                                                    stroke="currentColor" 
+                                                    strokeWidth="1.5" 
+                                                    strokeLinecap="round" 
+                                                    strokeLinejoin="round"
+                                                />
+                                            </svg>
+                                        </motion.div>
+                                    </div>
+                                </motion.div>
+                            </Link>
                         ))}
                     </motion.div>
                 </div>

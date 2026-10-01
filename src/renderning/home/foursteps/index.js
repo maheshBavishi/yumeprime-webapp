@@ -30,8 +30,12 @@ export default function Foursteps() {
                         viewport={{ once: true, margin: '-50px' }}
                         transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        <Button fill text="Register now" />
-                        <Button lightButton text="Open a Free Demo Account" />
+                        <a href='https://portal.yumeprime.com/signup' target='_blank'>
+                            <Button fill text="Register now" />
+                        </a>
+                        <a href='https://portal.yumeprime.com/signin' target='_blank'>
+                            <Button lightButton text="Open a Free Demo Account" />
+                        </a>
                     </motion.div>
                 </div>
 

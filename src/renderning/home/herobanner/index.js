@@ -39,8 +39,12 @@ export default function Herobanner() {
               indices, commodities, and stock CFDs with transparent pricing.
             </p>
             <div className={styles.buttonAlignment}>
-              <Button text="Open Live Account" />
-              <Button text="Open a Free Demo Account" outline />
+              <a href='https://portal.yumeprime.com/signin' target='_blank'>
+                <Button text="Open Live Account" />
+              </a>
+              <a href='https://portal.yumeprime.com/signup' target='_blank'>
+                <Button text="Open a Free Demo Account" outline href="/contact" />
+              </a>
             </div>
           </motion.div>
         </div>

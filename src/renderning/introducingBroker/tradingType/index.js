@@ -20,7 +20,7 @@ export default function TradingType() {
                                 </p>
                             </div>
                             <div className={styles.btn}>
-                                <Button text="Explore Social Trading" fill />
+                                <Button text="Explore Social Trading" fill href="/social-trading" />
                             </div>
                         </div>
                         <div className={styles.center}>
@@ -61,7 +61,7 @@ export default function TradingType() {
                                 </p>
                             </div>
                             <div className={styles.btn}>
-                                <Button text="Explore PAMM" fill />
+                                <Button text="Explore PAMM" fill href="/pamm-trading" />
                             </div>
                         </div>
                         <div className={styles.center}>

@@ -62,7 +62,7 @@ export default function FaqSection() {
                             <h2>
                                 Quick Answers
                             </h2>
-                            <Button text="View all faqs" />
+                            <Button text="View all faqs" href="/faq" />
                         </motion.div>
                     </div>
 

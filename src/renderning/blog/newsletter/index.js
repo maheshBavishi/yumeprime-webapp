@@ -44,7 +44,9 @@ export default function Newsletter() {
                     transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
                 >
                     <Input placeholder="Enter your email" />
-                    <Button text='Open Live account' />
+                    <a href='https://portal.yumeprime.com/signin' target='_blank'>
+                        <Button text='Open Live account' />
+                    </a>
                 </motion.div>
             </div>
         </div>

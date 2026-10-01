@@ -218,6 +218,9 @@ export default function Header() {
                         </Link>
                     );
                 })}
+                <a href='https://portal.yumeprime.com/signin' target='_blank'>
+                    <Button text="Login" />
+                </a>
             </nav>
 
             {/* Mobile / Tablet Hamburger Toggle Button */}
@@ -339,7 +342,9 @@ export default function Header() {
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.4, delay: 0.35 }}
                             >
-                                <Button text="Open Live Account" fill />
+                                <a href='https://portal.yumeprime.com/signin' target='_blank'>
+                                    <Button text="Login" />
+                                </a>
                             </motion.div>
                         </motion.div>
                     </>
