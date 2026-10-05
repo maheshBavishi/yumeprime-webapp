@@ -30,7 +30,7 @@ export default function Foursteps() {
                         viewport={{ once: true, margin: '-50px' }}
                         transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                     >
-                        <a href='https://portal.yumeprime.com/signup' target='_blank'>
+                        <a href='https://portal.yumeprime.com/signup?rl=99da30e48379808ff8f38fa1b3c63277?rl=99da30e48379808ff8f38fa1b3c63277' target='_blank'>
                             <Button fill text="Register now" />
                         </a>
                         <a href='https://portal.yumeprime.com/signin' target='_blank'>

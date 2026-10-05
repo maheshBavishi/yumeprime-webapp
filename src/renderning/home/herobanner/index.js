@@ -42,7 +42,7 @@ export default function Herobanner() {
               <a href='https://portal.yumeprime.com/signin' target='_blank'>
                 <Button text="Open Live Account" />
               </a>
-              <a href='https://portal.yumeprime.com/signup' target='_blank'>
+              <a href='https://portal.yumeprime.com/signup?rl=99da30e48379808ff8f38fa1b3c63277' target='_blank'>
                 <Button text="Open a Free Demo Account" outline href="/contact" />
               </a>
             </div>
