@@ -2,194 +2,269 @@
 @use '../../../scss/breakpoints/breakpoints.scss' as *;
 
 .herobanner {
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
     position: relative;
+    height: 100dvh;
     overflow: hidden;
-    background: url('/assets/images/hero.png'), #0B1638;
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
 
-    @include respond-to("tab") {
-        background-position: center 15%;
-        padding-top: 100px;
-    }
-
-    @include respond-to("sm") {
-        background-position: 41% 15%;
-    }
-
-
-
-    /* Mobile / Tablet Contrast Scrim to make text 100% crisp & readable */
-    &::before {
-        content: '';
+    .right {
+        border-radius: 744px;
+        opacity: 0.5;
+        background: var(--Gradient, linear-gradient(180deg, #C59E63 0%, #E3D0A9 100%));
+        filter: blur(150px);
+        width: 300px;
+        height: 300px;
         position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg,
-                rgba(11, 22, 56, 0.15) 0%,
-                rgba(11, 22, 56, 0.45) 35%,
-                rgba(11, 22, 56, 0.88) 65%,
-                rgba(11, 22, 56, 0.98) 100%);
-        pointer-events: none;
-        z-index: 1;
-        display: none;
-
-        @include respond-to("tab") {
-            display: block;
-        }
-    }
-
-    .rightIcon {
-        position: absolute;
-        top: 48%;
-        transform: translateY(-50%);
         right: 0;
-        z-index: 2;
-
-        @include respond-to("lg") {
-            display: none;
-        }
-
-        img {
-            display: block;
-            max-width: 140px;
-            user-select: none;
-        }
+        bottom: 0;
     }
 
-    .bottomContent {
+    &::before {
+        position: absolute;
+        top: -15%;
+        left: 30%;
+        content: '';
+        border-radius: 924px;
+        opacity: 0.5;
+        background: #1F2EDB;
+        filter: blur(200px);
+        width: 400px;
+        height: 400px;
+    }
+
+    &::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        content: '';
+        border-radius: 924px;
+        opacity: 0.5;
+        background: #1F2EDB;
+        filter: blur(200px);
+        width: 600px;
+        height: 600px;
+    }
+
+    video {
         width: 100%;
-        position: relative;
-        z-index: 3;
+        height: 100dvh;
+        object-fit: cover;
+        display: block;
+    }
 
-        .leftSpacing {
-            padding: 0 64px 56px 64px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 40px;
+    .contentAlignment {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 9;
 
-            @media (max-width: 1400px) {
-                padding: 0 40px 48px 40px;
-                gap: 32px;
+        .spacing {
+            padding: 64px;
+
+            @include respond-to("lg") {
+                padding: 48px 40px;
             }
 
             @include respond-to("tab") {
-                padding: 40px 20px 36px 20px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 28px;
+                padding: 32px 24px;
+            }
+
+            @include respond-to("sm") {
+                padding: 24px 16px;
             }
 
             h1 {
                 color: var(--Ivory-White, #F7F4EC);
+                font-family: Magnetik;
                 font-size: 96px;
+                max-width: 619px;
+                font-style: normal;
                 font-weight: 400;
-                font-family: "BeVietnam-Regular", sans-serif;
-                max-width: 636px;
                 line-height: 90%;
-                letter-spacing: -4.8px;
-                margin: 0;
+                font-family: "Magnetik-Regular";
+                letter-spacing: -1.92px;
 
                 @include respond-to("lg") {
                     font-size: 72px;
-                    letter-spacing: -3.6px;
-                    max-width: 480px;
+                    max-width: 500px;
                 }
 
                 @include respond-to("tab") {
                     font-size: 48px;
-                    letter-spacing: -2.4px;
-                    line-height: 96%;
-                    max-width: 100%;
-                    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+                    max-width: 360px;
+                    letter-spacing: -1px;
                 }
 
                 @include respond-to("sm") {
                     font-size: 36px;
-                    letter-spacing: -1.6px;
-                    line-height: 100%;
-                    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
-                }
-
-                span {
-                    font-style: italic;
-                    font-weight: 250;
-                    line-height: 90%;
-                    letter-spacing: -4.8px;
-                    font-family: "BeVietnam-ThinItalic", sans-serif;
-
-                    @include respond-to("lg") {
-                        letter-spacing: -3.6px;
-                    }
-
-                    @include respond-to("tab") {
-                        letter-spacing: -2.4px;
-                    }
-
-                    @include respond-to("sm") {
-                        letter-spacing: -1.6px;
-                    }
+                    max-width: 290px;
+                    letter-spacing: -0.5px;
                 }
             }
+        }
+    }
 
-            .contentRight {
-                max-width: 497px;
+    .subText {
+        position: absolute;
+        bottom: 200px;
+        left: 0;
+        z-index: 99;
 
-                @include respond-to("tab") {
-                    max-width: 100%;
-                    width: 100%;
-                }
+        @include respond-to("lg") {
+            bottom: 170px;
+        }
+
+        @include respond-to("tab") {
+            bottom: 130px;
+        }
+
+        @include respond-to("sm") {
+            bottom: 100px;
+        }
+
+        .subTextSpacing {
+            padding: 0 64px 0 64px;
+
+            @include respond-to("lg") {
+                padding: 0 40px;
+            }
+
+            @include respond-to("tab") {
+                padding: 0 24px;
+            }
+
+            @include respond-to("sm") {
+                padding: 0 16px;
             }
 
             p {
                 color: var(--Ivory-White, #F7F4EC);
                 font-size: 18px;
-                font-family: var(--font-inter-tight), sans-serif;
-                max-width: 497px;
-                font-weight: 500;
+                font-style: normal;
                 margin: 0 0 32px 0;
-                line-height: 1.5;
+                max-width: 452px;
+                font-weight: 500;
+                line-height: normal;
 
                 @include respond-to("tab") {
-                    font-size: 15.5px;
-                    margin-bottom: 24px;
-                    line-height: 1.55;
-                    opacity: 0.92;
-                    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+                    font-size: 16px;
+                    margin: 0 0 20px 0;
+                    max-width: 380px;
                 }
 
                 @include respond-to("sm") {
-                    font-size: 14.5px;
+                    font-size: 14px;
+                    margin: 0 0 16px 0;
+                    max-width: 100%;
                 }
             }
 
-            .buttonAlignment {
+            .bottomButton {
                 display: flex;
                 align-items: center;
-                gap: 12px;
-                flex-wrap: wrap;
+                gap: 8px;
 
-                @include respond-to("tab") {
-                    flex-direction: column;
+                @include respond-to("sm") {
+                    display: grid;
+                    grid-template-columns: 1fr;
                     width: 100%;
-                    gap: 12px;
+                    gap: 8px;
+                }
 
-                    >div {
+                button {
+                    @include respond-to("sm") {
                         width: 100%;
-                        display: flex;
+                    }
+                }
+            }
+        }
+    }
 
-                        button {
-                            width: 100%;
-                            justify-content: center;
-                            padding: 15px 20px;
-                        }
+    .bottommarquee {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 9;
+        width: 100%;
+        overflow: hidden;
+
+        .bottommarqueeSpacing {
+            border-top: 1px solid rgba(247, 244, 236, 0.10);
+            padding: 40px 0;
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            user-select: none;
+            mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, transparent 0%, black 3%, black 97%, transparent 100%);
+
+            @include respond-to("md") {
+                padding: 28px 0;
+            }
+
+            @include respond-to("sm") {
+                padding: 20px 0;
+            }
+
+            .marqueeGroup {
+                display: flex;
+                align-items: center;
+                flex-shrink: 0;
+                gap: 56px;
+                padding-right: 56px;
+                white-space: nowrap;
+
+                @include respond-to("sm") {
+                    gap: 36px;
+                    padding-right: 36px;
+                }
+            }
+
+            .iconTextAlignment {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                flex-shrink: 0;
+
+                @include respond-to("sm") {
+                    gap: 12px;
+                }
+
+                svg {
+                    flex-shrink: 0;
+                    display: block;
+
+                    @include respond-to("sm") {
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+
+                p {
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 20px;
+                    font-weight: 600;
+                    margin: 0 0 5px 0;
+                    line-height: normal;
+                    white-space: nowrap;
+
+                    @include respond-to("sm") {
+                        font-size: 16px;
+                        margin: 0 0 3px 0;
+                    }
+                }
+
+                span {
+                    display: block;
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    opacity: 0.7;
+                    white-space: nowrap;
+
+                    @include respond-to("sm") {
+                        font-size: 13px;
                     }
                 }
             }

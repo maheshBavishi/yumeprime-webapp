@@ -1,184 +1,164 @@
 @use '../../../scss/main.scss' as *;
 @use '../../../scss/breakpoints/breakpoints.scss' as *;
 
-.faqSection {
+.faqsection {
     background: var(--Midnight-Navy, #0B1638);
-    padding: 120px 0 0 0;
-    position: relative;
+    padding: 96px 0 0 0;
+    overflow: hidden;
 
     @include respond-to("tab") {
         padding: 60px 0 0 0;
     }
 
-    &::before {
-        border-radius: 1920px;
-        background: #FFF;
-        mix-blend-mode: overlay;
-        filter: blur(250px);
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 50%;
-        content: '';
-        pointer-events: none;
+    @include respond-to("sm") {
+        padding: 48px 0 0 0;
     }
 
-    .grid {
+    .title {
+        padding: 0 0 48px 0;
+
+        span {
+            display: block;
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 20px;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+            padding: 0 0 12px 0;
+            opacity: .7;
+        }
+
+        h2 {
+            color: var(--Ivory-White, #F7F4EC);
+            font-size: 64px;
+            font-weight: 500;
+            line-height: 90%;
+            text-align: center;
+            font-family: "Magnetik-Medium";
+
+            @include respond-to("tab") {
+                font-size: 40px;
+            }
+
+            @include respond-to("sm") {
+                font-size: 32px;
+            }
+        }
+    }
+
+    .faqGrid {
         display: grid;
-        grid-template-columns: 410px 1fr;
-        gap: 80px;
-        padding: 0 0 120px 0;
-        border-bottom: 1px solid #17254f;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        padding: 0 0 48px 0;
+        align-items: flex-start;
 
         @include respond-to("lg") {
-            grid-template-columns: 340px 1fr;
-            gap: 48px;
-            padding-bottom: 80px;
+            gap: 40px;
         }
 
         @include respond-to("tab") {
             grid-template-columns: 1fr;
-            gap: 40px;
-            padding-bottom: 60px;
+            gap: 0;
         }
 
-        .content {
-            span {
-                display: block;
-                color: var(--Ivory-White, #F7F4EC);
-                font-size: 20px;
-                font-family: var(--font-inter-tight), sans-serif;
-                font-weight: 400;
-                line-height: normal;
+        .column {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
 
-                @include respond-to("tab") {
-                    font-size: 17px;
-                }
-            }
-
-            h2 {
-                color: var(--Ivory-White, #F7F4EC);
-                font-size: 64px;
-                margin: 16px 0 40px 0;
-                font-weight: 400;
-                font-family: "BeVietnam-Regular", sans-serif;
-                line-height: 90%;
-                letter-spacing: -3.2px;
-
-                @include respond-to("lg") {
-                    font-size: 52px;
-                    letter-spacing: -2.6px;
-                    margin-bottom: 28px;
-                }
-
-                @include respond-to("tab") {
-                    font-size: 40px;
-                    letter-spacing: -2px;
-                    margin-bottom: 24px;
-                }
-
-                @include respond-to("sm") {
-                    font-size: 32px;
-                    letter-spacing: -1.6px;
+            @include respond-to("tab") {
+                &:last-child {
+                    border-top: none;
                 }
             }
         }
 
-        .accordionList {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        .faqItem {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 0 24px;
+            transition: background-color 0.35s ease, border-color 0.35s ease;
 
-            .faqItem {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-                transition: background-color 0.3s ease, border-color 0.3s ease;
-                background-color: transparent;
+            @include respond-to("sm") {
+                padding: 0 16px;
+            }
 
-                &.active {
-                    background-color: rgba(255, 255, 255, 0.035);
-                    border-bottom-color: rgba(255, 255, 255, 0.22);
+            &.active {
+                background: #0E1C48;
+                border-bottom-color: rgba(255, 255, 255, 0.25);
+            }
+
+            .faqHeader {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+                padding: 24px 0;
+                cursor: pointer;
+                user-select: none;
+
+                &:hover {
+                    h3 {
+                        color: #FFFFFF;
+                    }
                 }
 
-                .faqHeader {
-                    padding: 26px 24px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-between;
-                    gap: 20px;
-                    cursor: pointer;
-                    user-select: none;
-                    outline: none;
+                h3 {
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 1.4;
+                    margin: 0;
+                    transition: color 0.2s ease;
 
                     @include respond-to("sm") {
-                        padding: 20px 16px;
-                    }
-
-                    h3 {
-                        color: var(--Ivory-White, #F7F4EC);
-                        font-size: 20px;
-                        font-family: "BeVietnam-Regular", sans-serif;
-                        font-weight: 400;
-                        line-height: 1.4;
-                        margin: 0;
-
-                        @include respond-to("sm") {
-                            font-size: 16.5px;
-                        }
-                    }
-
-                    .iconWrapper {
-                        width: 16px;
-                        height: 16px;
-                        position: relative;
-                        flex-shrink: 0;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-
-                        .horizontalBar {
-                            position: absolute;
-                            width: 12px;
-                            height: 1.5px;
-                            background-color: #8C99AE;
-                            border-radius: 1px;
-                        }
-
-                        .verticalBar {
-                            position: absolute;
-                            width: 1.5px;
-                            height: 12px;
-                            background-color: #8C99AE;
-                            border-radius: 1px;
-                            transform-origin: center;
-                        }
+                        font-size: 16px;
                     }
                 }
 
-                .faqBody {
-                    overflow: hidden;
-                    will-change: height, opacity;
+                .iconWrapper {
+                    width: 20px;
+                    height: 20px;
+                    position: relative;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
 
-                    .faqBodyInner {
-                        padding: 0 24px 26px 24px;
+                    .horizontalBar {
+                        position: absolute;
+                        width: 14px;
+                        height: 2px;
+                        background-color: var(--Ivory-White, #F7F4EC);
+                        border-radius: 2px;
+                    }
+
+                    .verticalBar {
+                        position: absolute;
+                        width: 2px;
+                        height: 14px;
+                        background-color: var(--Ivory-White, #F7F4EC);
+                        border-radius: 2px;
+                        transform-origin: center;
+                    }
+                }
+            }
+
+            .answerWrapper {
+                overflow: hidden;
+
+                .answer {
+                    padding: 0 0 24px 0;
+
+                    p {
+                        color: var(--Ivory-White, #F7F4EC);
+                        opacity: 0.7;
+                        font-size: 15px;
+                        font-weight: 400;
+                        line-height: 1.6;
+                        margin: 0;
+                        max-width: 95%;
 
                         @include respond-to("sm") {
-                            padding: 0 16px 20px 16px;
-                        }
-
-                        p {
-                            color: rgba(247, 244, 236, 0.65);
-                            font-size: 15px;
-                            font-family: var(--font-inter-tight), sans-serif;
-                            font-weight: 400;
-                            line-height: 1.6;
-                            margin: 0;
-                            max-width: 680px;
-
-                            @include respond-to("sm") {
-                                font-size: 14px;
-                            }
+                            font-size: 14px;
                         }
                     }
                 }
@@ -186,127 +166,250 @@
         }
     }
 
-    .tradeFrom {
-        padding: 120px 0 0 0;
-        position: relative;
-        z-index: 1;
+    .buttonAlignment {
+        display: flex;
+        justify-content: center;
+        padding: 0 0 120px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
         @include respond-to("tab") {
-            padding: 60px 0 0 0;
+            padding: 0 0 60px 0;
         }
 
-        .sectionTitle {
-            h2 {
-                color: #F7F4EC;
+        @include respond-to("sm") {
+            padding: 0 0 40px 0;
+        }
+    }
+
+    .downloadapp {
+        padding: 120px 0 96px 0;
+        position: relative;
+
+        @include respond-to("lg") {
+            padding: 80px 0;
+        }
+
+        @include respond-to("tab") {
+            padding: 60px 0;
+        }
+
+        @include respond-to("sm") {
+            padding: 48px 0 40px 0;
+        }
+
+        .imageAlignment {
+            position: absolute;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: flex-end;
+            pointer-events: none;
+
+            img {
+                display: block;
+                width: 100%;
+                max-width: 1000px;
+            }
+
+            @include respond-to("xl") {
+                img {
+                    max-width: 850px;
+                }
+            }
+
+            @include respond-to("lg") {
+                img {
+                    max-width: 620px;
+                    opacity: 0.85;
+                }
+            }
+
+            @include respond-to("tab") {
+                position: relative;
+                width: 100%;
+                right: auto;
+                bottom: auto;
+                margin-top: 40px;
+                justify-content: center;
+
+                img {
+                    max-width: 540px;
+                    margin: 0 auto;
+                    opacity: 1;
+                }
+            }
+
+            @include respond-to("sm") {
+                margin-top: 30px;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .content {
+            max-width: 668px;
+
+            @include respond-to("tab") {
+                max-width: 100%;
                 text-align: center;
+            }
+
+            @include respond-to("sm") {
+                padding: 40px 0 0 0;
+            }
+
+            h3 {
+                color: #F7F4EC;
                 font-size: 96px;
-                font-weight: 400;
+                font-weight: 500;
                 line-height: 90%;
-                font-family: "BeVietnam-Regular", sans-serif;
-                margin: 0 0 40px 0;
-                letter-spacing: -4.8px;
+                margin: 0 0 24px 0;
+                font-family: "Magnetik-Medium";
 
                 @include respond-to("lg") {
                     font-size: 72px;
-                    letter-spacing: -3.6px;
-                    margin-bottom: 28px;
                 }
 
                 @include respond-to("tab") {
-                    font-size: 48px;
-                    letter-spacing: -2.4px;
+                    font-size: 50px;
                     margin-bottom: 20px;
                 }
 
                 @include respond-to("sm") {
-                    font-size: 34px;
-                    letter-spacing: -1.7px;
+                    font-size: 36px;
                     margin-bottom: 16px;
                 }
             }
 
             p {
+                max-width: 500px;
                 color: var(--Ivory-White, #F7F4EC);
-                text-align: center;
-                max-width: 504px;
-                margin: 0 auto;
                 font-size: 18px;
-                font-family: var(--font-inter-tight), sans-serif;
                 font-weight: 500;
-                line-height: 1.5;
-
-                @include respond-to("tab") {
-                    font-size: 16px;
-                    padding: 0 16px;
-                }
-            }
-
-            span {
-                display: block;
-                color: var(--Ivory-White, #F7F4EC);
-                text-align: center;
-                font-size: 13px;
-                font-family: "BeVietnam-Medium", sans-serif;
-                font-weight: 600;
+                margin: 0 0 48px 0;
                 line-height: normal;
-                letter-spacing: 1.3px;
-                padding: 40px 0 0 0;
-                text-transform: uppercase;
-                opacity: 0.7;
 
                 @include respond-to("tab") {
-                    padding: 28px 0 0 0;
+                    margin: 0 auto 36px auto;
+                    font-size: 16px;
+                }
+
+                @include respond-to("sm") {
+                    font-size: 15px;
+                    margin: 0 auto 28px auto;
                 }
             }
-        }
 
-        .buttonAlignment {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            justify-content: center;
-            padding: 20px 0 60px 0;
-            flex-wrap: wrap;
-
-            @include respond-to("tab") {
-                padding: 20px 0 40px 0;
-            }
-
-            .storeBtn {
-                cursor: pointer;
+            .scanBox {
+                border-radius: 24px;
+                background: rgba(255, 255, 255, 0.05);
+                max-width: 344px;
+                padding: 40px 60px;
                 display: inline-flex;
-                align-items: center;
-                user-select: none;
-                will-change: transform;
+                position: relative;
+
+                @include respond-to("tab") {
+                    margin: 0 auto;
+                }
+
+                @include respond-to("sm") {
+                    padding: 30px 40px;
+                    max-width: 280px;
+                }
+
+                .btnAlignment {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    bottom: -7%;
+                }
 
                 img {
                     display: block;
-                    max-width: 180px;
-                    height: auto;
+                    width: 100%;
+                }
+            }
+
+            .downloadFrom {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                max-width: 344px;
+                margin: 48px 0 0 0;
+
+                @include respond-to("tab") {
+                    margin: 48px auto 0 auto;
+                }
+
+                @include respond-to("sm") {
+                    margin: 40px auto 0 auto;
+                    max-width: 280px;
+                }
+
+                &::before,
+                &::after {
+                    content: '';
+                    flex: 1;
+                    height: 1px;
+                    background: rgba(255, 255, 255, 0.2);
+                }
+
+                span {
+                    color: var(--Ivory-White, #F7F4EC);
+                    font-size: 14px;
+                    font-weight: 600;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    white-space: nowrap;
 
                     @include respond-to("sm") {
-                        max-width: 150px;
+                        font-size: 12px;
+                        letter-spacing: 1.5px;
+                    }
+                }
+            }
+
+            .storeButtons {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                max-width: 344px;
+                margin: 24px 0 0 0;
+
+                @include respond-to("tab") {
+                    margin: 24px auto 0 auto;
+                }
+
+                @include respond-to("sm") {
+                    max-width: 280px;
+                    margin: 20px auto 0 auto;
+                    gap: 12px;
+                }
+
+                a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex: 1;
+                    transition: opacity 0.2s ease, transform 0.2s ease;
+
+                    &:hover {
+                        opacity: 0.85;
+                        transform: translateY(-2px);
+                    }
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        display: block;
                     }
                 }
             }
         }
-
-        .mobile {
-            display: flex;
-            justify-content: center;
-            position: relative;
-            z-index: 2;
-
-            .mobileWrapper {
-                cursor: pointer;
-                will-change: transform;
-
-                img {
-                    display: block;
-                    max-width: 100%;
-                    height: auto;
-                }
-            }
-        }
     }
-}
+}

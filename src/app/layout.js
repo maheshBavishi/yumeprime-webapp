@@ -12,6 +12,7 @@ const intertight = Inter_Tight({
 
 
 
+
 export const metadata = {
   title: "Yume Prime - Your Dream, Executed with Prime Precision",
   description: "Institutional-grade execution, razor-thin spreads from 0.0 pips, and deep multi-asset liquidity across global financial markets with Yume Prime.",

@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,6 +8,7 @@ import styles from './header.module.scss';
 import Button from '../button';
 
 const Logo = '/assets/logo/logo.svg';
+const LogoWhite = '/assets/logo/footer-logo.svg';
 const MotionLink = motion(Link);
 
 // Market Submenu SVG Icons
@@ -73,7 +75,7 @@ const navLinks = [
     { label: 'Account Types', href: '/account-type' },
     { label: 'Trading Platforms', href: '/trading-platforms' },
     { label: 'Trading Solutions', href: '/trading-solutions' },
-    { label: 'Trade & Win 🏆', href: '/trade-win' },
+    { label: 'Trade & Win 🏆', href: '/trade-win', isGold: true },
     { label: 'Blog', href: '/blog' },
 ];
 
@@ -81,6 +83,11 @@ export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isMarketsHovered, setIsMarketsHovered] = useState(false);
     const [isMobileMarketsOpen, setIsMobileMarketsOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
     const pathname = usePathname();
     const isDarkHeader = pathname === '/account-type' || pathname?.startsWith('/account-type')
         || pathname === '/trading-platforms' || pathname?.startsWith('/trading-platforms')
@@ -218,10 +225,16 @@ export default function Header() {
                         </Link>
                     );
                 })}
-                <a href='https://portal.yumeprime.com/signin' target='_blank'>
-                    <Button text="Login" />
-                </a>
+
             </nav>
+            <div className={styles.buttonAlignment}>
+                <a href='https://portal.yumeprime.com/signin' target='_blank'>
+                    <Button text="login" outline />
+                </a>
+                <a href='https://portal.yumeprime.com/signin' target='_blank'>
+                    <Button text="Sign up" />
+                </a>
+            </div>
 
             {/* Mobile / Tablet Hamburger Toggle Button */}
             <button
@@ -235,121 +248,127 @@ export default function Header() {
                 <span className={styles.line} />
             </button>
 
-            {/* Mobile / Tablet Drawer Menu & Backdrop */}
-            <AnimatePresence>
-                {isMobileMenuOpen && (
-                    <>
-                        {/* Dim Backdrop */}
-                        <motion.div
-                            className={styles.backdrop}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            transition={{ duration: 0.3 }}
-                            onClick={() => setIsMobileMenuOpen(false)}
-                        />
-
-                        {/* Slide-out Drawer */}
-                        <motion.div
-                            className={styles.drawer}
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
-                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        >
-                            <div className={styles.drawerHeader}>
-                                <div className={styles.drawerLogo}>
-                                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
-                                        <img src={Logo} alt='Yume Prime Logo' />
-                                    </Link>
-                                </div>
-                                <button
-                                    className={styles.closeBtn}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    aria-label="Close menu"
-                                >
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                        <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                    </svg>
-                                </button>
-                            </div>
-
-                            <div className={styles.drawerNav}>
-                                {navLinks.map((link, idx) => {
-                                    if (link.label === 'Markets') {
-                                        return (
-                                            <div key={idx} className={styles.mobileAccordion}>
-                                                <div
-                                                    className={styles.mobileAccordionHeader}
-                                                    onClick={() => setIsMobileMarketsOpen((prev) => !prev)}
-                                                >
-                                                    <span>{link.label}</span>
-                                                    <motion.span
-                                                        animate={{ rotate: isMobileMarketsOpen ? 180 : 0 }}
-                                                        transition={{ duration: 0.2 }}
-                                                        className={styles.accordionChevron}
-                                                    >
-                                                        <ChevronDown />
-                                                    </motion.span>
-                                                </div>
-
-                                                <AnimatePresence>
-                                                    {isMobileMarketsOpen && (
-                                                        <motion.div
-                                                            className={styles.mobileSubmenu}
-                                                            initial={{ height: 0, opacity: 0 }}
-                                                            animate={{ height: 'auto', opacity: 1 }}
-                                                            exit={{ height: 0, opacity: 0 }}
-                                                            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                                                        >
-                                                            {marketItems.map((sub, sIdx) => (
-                                                                <Link
-                                                                    key={sIdx}
-                                                                    href={sub.href}
-                                                                    className={styles.mobileSubItem}
-                                                                    onClick={() => setIsMobileMenuOpen(false)}
-                                                                >
-                                                                    <span className={styles.subIcon}>{sub.icon}</span>
-                                                                    <span>{sub.label}</span>
-                                                                </Link>
-                                                            ))}
-                                                        </motion.div>
-                                                    )}
-                                                </AnimatePresence>
-                                            </div>
-                                        );
-                                    }
-
-                                    return (
-                                        <MotionLink
-                                            key={idx}
-                                            href={link.href}
-                                            className={link.isGold ? styles.goldText : ''}
-                                            onClick={() => setIsMobileMenuOpen(false)}
-                                            initial={{ opacity: 0, x: 20 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ duration: 0.3, delay: 0.05 + idx * 0.04 }}
-                                        >
-                                            {link.label}
-                                        </MotionLink>
-                                    );
-                                })}
-                            </div>
-
+            {/* Mobile / Tablet Drawer Menu & Backdrop via Portal */}
+            {mounted && typeof document !== 'undefined' && createPortal(
+                <AnimatePresence>
+                    {isMobileMenuOpen && (
+                        <>
+                            {/* Dim Backdrop */}
                             <motion.div
-                                className={styles.drawerFooter}
-                                initial={{ opacity: 0, y: 20 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.4, delay: 0.35 }}
+                                className={styles.backdrop}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            />
+
+                            {/* Slide-out Drawer */}
+                            <motion.div
+                                className={styles.drawer}
+                                initial={{ x: '100%' }}
+                                animate={{ x: 0 }}
+                                exit={{ x: '100%' }}
+                                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                             >
-                                <a href='https://portal.yumeprime.com/signin' target='_blank'>
-                                    <Button text="Login" />
-                                </a>
+                                <div className={styles.drawerHeader}>
+                                    <div className={styles.drawerLogo}>
+                                        <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                                            <img src={LogoWhite} alt='Yume Prime Logo' />
+                                        </Link>
+                                    </div>
+                                    <button
+                                        className={styles.closeBtn}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        aria-label="Close menu"
+                                    >
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                <div className={styles.drawerNav}>
+                                    {navLinks.map((link, idx) => {
+                                        if (link.label === 'Markets') {
+                                            return (
+                                                <div key={idx} className={styles.mobileAccordion}>
+                                                    <div
+                                                        className={styles.mobileAccordionHeader}
+                                                        onClick={() => setIsMobileMarketsOpen((prev) => !prev)}
+                                                    >
+                                                        <span>{link.label}</span>
+                                                        <motion.span
+                                                            animate={{ rotate: isMobileMarketsOpen ? 180 : 0 }}
+                                                            transition={{ duration: 0.2 }}
+                                                            className={styles.accordionChevron}
+                                                        >
+                                                            <ChevronDown />
+                                                        </motion.span>
+                                                    </div>
+
+                                                    <AnimatePresence>
+                                                        {isMobileMarketsOpen && (
+                                                            <motion.div
+                                                                className={styles.mobileSubmenu}
+                                                                initial={{ height: 0, opacity: 0 }}
+                                                                animate={{ height: 'auto', opacity: 1 }}
+                                                                exit={{ height: 0, opacity: 0 }}
+                                                                transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                                            >
+                                                                {marketItems.map((sub, sIdx) => (
+                                                                    <Link
+                                                                        key={sIdx}
+                                                                        href={sub.href}
+                                                                        className={styles.mobileSubItem}
+                                                                        onClick={() => setIsMobileMenuOpen(false)}
+                                                                    >
+                                                                        <span className={styles.subIcon}>{sub.icon}</span>
+                                                                        <span>{sub.label}</span>
+                                                                    </Link>
+                                                                ))}
+                                                            </motion.div>
+                                                        )}
+                                                    </AnimatePresence>
+                                                </div>
+                                            );
+                                        }
+
+                                        return (
+                                            <MotionLink
+                                                key={idx}
+                                                href={link.href}
+                                                className={link.isGold ? styles.goldText : ''}
+                                                onClick={() => setIsMobileMenuOpen(false)}
+                                                initial={{ opacity: 0, x: 20 }}
+                                                animate={{ opacity: 1, x: 0 }}
+                                                transition={{ duration: 0.3, delay: 0.05 + idx * 0.04 }}
+                                            >
+                                                {link.label}
+                                            </MotionLink>
+                                        );
+                                    })}
+                                </div>
+
+                                <motion.div
+                                    className={styles.drawerFooter}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.4, delay: 0.35 }}
+                                >
+                                    <a href='https://portal.yumeprime.com/signin' target='_blank' rel="noopener noreferrer">
+                                        <Button text="login" outline textwhite />
+                                    </a>
+                                    <a href='https://portal.yumeprime.com/signin' target='_blank' rel="noopener noreferrer">
+                                        <Button text="Sign up" />
+                                    </a>
+                                </motion.div>
                             </motion.div>
-                        </motion.div>
-                    </>
-                )}
-            </AnimatePresence>
+                        </>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </header>
     );
 }

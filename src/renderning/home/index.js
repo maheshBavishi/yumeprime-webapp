@@ -7,25 +7,20 @@ import AccountStage from './accountStage'
 import TradeTerms from './tradeTerms'
 import CardSection from './cardSection'
 import FeaturedSection from './featuredSection'
-import Trustedby from './trustedby'
-import MarketInsights from './marketInsights'
 import FaqSection from './faqSection'
 import VisionSection from './visionSection'
 
 export default function HomePage() {
     return (
-        <div>
+        <div style={{ overflowX: 'clip' }}>
             <Herobanner />
-            <SliderAnimation />
             <WhyTraders />
             <Foursteps />
             <AccountStage />
             <TradeTerms />
-            <CardSection />
+            <CardSection cardhide />
             <FeaturedSection />
-            {/* <Trustedby /> */}
-            <MarketInsights />
-            {/* <FaqSection /> */}
+            <FaqSection />
             <VisionSection />
         </div>
     )

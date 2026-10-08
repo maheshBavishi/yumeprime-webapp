@@ -1,40 +1,28 @@
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
-import styles from './visionSection.module.scss';
 import Button from '@/components/button';
+import styles from './visionSection.module.scss';
+const Execution = '/assets/images/execution-coin.png';
 
 export default function VisionSection() {
     return (
-        <section className={styles.visionSection}>
-            <div className='container'>
-                {/* Animated Heading */}
-                <motion.h2
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-60px' }}
-                    transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                >
-                    The vision is yours. <br />
-                    The <span> execution is ours.</span>
-                </motion.h2>
-
-                {/* Animated Call To Action Button */}
-                <motion.div
-                    className={styles.center}
-                    initial={{ opacity: 0, y: 25, scale: 0.95 }}
-                    whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                    viewport={{ once: true, margin: '-60px' }}
-                    transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                    whileHover={{ scale: 1.03, y: -2 }}
-                    whileTap={{ scale: 0.97 }}
-                >
-                    <a href='https://portal.yumeprime.com/signin' target='_blank'>
-                        <Button text="Open Live account" fill  />
-                    </a>
-                </motion.div>
+        <div className={styles.visionSection}>
+            <div className='container-xl'>
+                <h2>
+                    Your vision. <br />
+                    Our execution.
+                </h2>
+                <p>
+                    Your vision sets the course. We
+                    handle the rest with precision and care.
+                </p>
+                <div className={styles.btnAlignment}>
+                    <Button text="Open Live account" fill />
+                    <Button text="Register Now" outlinePrimary />
+                </div>
+                <div className={styles.imageAlignment}>
+                    <img src={Execution} alt='Execution' />
+                </div>
             </div>
-        </section>
+        </div>
     );
 }
 

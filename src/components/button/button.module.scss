@@ -4,17 +4,19 @@
 .button {
     position: relative;
     overflow: hidden;
-    border-radius: 52px;
+    border-radius: 12px;
     background: var(--Gradient, linear-gradient(180deg, #C59E63 0%, #E3D0A9 100%));
-    padding: 14px 22px;
+    padding: 16px 26px;
     cursor: pointer;
     color: var(--Midnight-Navy, #0B1638);
-    font-size: 13px;
-    font-family: var(--font-inter-tight), sans-serif;
+    font-family: var(--font-inter-tight);
     border: none;
+    font-size: 13px;
+    font-style: normal;
     font-weight: 700;
     line-height: normal;
     letter-spacing: 0.65px;
+    text-transform: uppercase;
     text-transform: uppercase;
     white-space: nowrap;
     display: inline-flex;
@@ -82,20 +84,49 @@
         }
     }
 
+    &.fillwhite {
+        background: #F7F4EC;
+        color: #0B1638;
+        width: fit-content;
+        border: none;
+
+        &:hover {
+            background: #14224C;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(11, 22, 56, 0.5);
+        }
+    }
+
+    &.outlinePrimary {
+        width: fit-content;
+        color: #0B1638;
+        background: transparent;
+        border: 1px solid var(--Midnight-Navy, #0B1638);
+
+        &:hover {
+            background: #14224C;
+            color: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(11, 22, 56, 0.5);
+        }
+    }
+
     /* Outline Variant */
     &.outline {
-        color: #F7F4EC;
+        color: var(--Ivory-White, #0B1638);
         background: transparent;
-        border-radius: 52px;
+        border-radius: 12px;
         position: relative;
         border: none;
+
         box-shadow: none;
 
         &::before {
             content: '';
             position: absolute;
             inset: 0;
-            border-radius: 52px;
+            border-radius: 12px;
             padding: 1.5px;
             background: var(--Gradient, linear-gradient(180deg, #C59E63 0%, #E3D0A9 100%));
             -webkit-mask:
@@ -103,14 +134,14 @@
                 linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
-            opacity: 0.3;
+            opacity: 0.5;
             pointer-events: none;
             transition: opacity 0.3s ease;
         }
 
         &:hover {
             background: rgba(197, 158, 99, 0.12);
-            color: #FFFFFF;
+            color: var(--Ivory-White, #0B1638);
             transform: translateY(-2px);
             box-shadow: 0 8px 24px rgba(197, 158, 99, 0.25);
 
@@ -118,6 +149,10 @@
                 opacity: 0.8;
             }
         }
+    }
+
+    &.textwhite {
+        color: #F7F4EC;
     }
 
     /* Light Button Variant */
@@ -155,4 +190,4 @@
             }
         }
     }
-}
+}

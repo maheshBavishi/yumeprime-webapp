@@ -54,3 +54,12 @@ h6 {
   padding: 0 20px;
   margin: 0 auto;
 }
+
+@media (max-width: 568px) {
+  .container-lg,
+  .container,
+  .container-xl,
+  .container-sm {
+    padding: 0 16px;
+  }
+}

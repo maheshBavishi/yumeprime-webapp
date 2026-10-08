@@ -2,68 +2,130 @@
 @use '../../../scss/breakpoints/breakpoints.scss' as *;
 
 .featuredSection {
-    padding: 120px 0;
-    overflow: hidden;
+    padding: 0 0 48px 0;
 
-    @include respond-to("tab") {
-        padding: 60px 0;
+    @include respond-to("sm") {
+        padding: 0 0 32px 0;
     }
 
-    h2 {
-        color: var(--Midnight-Navy, #0B1638);
-        font-size: 20px;
-        font-family: "BeVietnam-Medium", sans-serif;
-        font-weight: 500;
-        line-height: normal;
-        margin: 0 0 28px 0;
-        letter-spacing: -0.4px;
+    .title {
+        padding: 0 0 24px 0;
+
+        h2 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 20px;
+            font-weight: 500;
+            line-height: normal;
+
+            @include respond-to("sm") {
+                font-size: 18px;
+            }
+        }
     }
 
-    .marqueeContainer {
-        width: 100%;
-        overflow: hidden;
-        position: relative;
-        mask-image: linear-gradient(to right,
-                transparent 0%,
-                black 6%,
-                black 94%,
-                transparent 100%);
-        -webkit-mask-image: linear-gradient(to right,
-                transparent 0%,
-                black 6%,
-                black 94%,
-                transparent 100%);
-    }
-
-    .marqueeTrack {
-        display: flex;
-        width: max-content;
-        gap: 24px;
-    }
-
-    .marqueeGroup {
+    .allBoxAlignment {
         display: flex;
         align-items: center;
+        padding: 0 0 84px 0;
         gap: 24px;
-        flex-shrink: 0;
-    }
-
-    .box {
-        width: 300px;
-        min-width: 300px;
-        max-width: 300px;
-        height: 100px;
-        background: #121D3D;
-        opacity: 0.1;
-        border-radius: 4px;
-        cursor: pointer;
-        flex-shrink: 0;
-        transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease;
 
         @include respond-to("tab") {
-            width: 220px;
-            min-width: 220px;
-            height: 80px;
+            padding: 0 0 48px 0;
+        }
+
+        @include respond-to("sm") {
+            padding: 0 0 36px 0;
+        }
+
+        .box {
+            min-width: 300px;
+            width: 300px;
+            max-width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include respond-to("sm") {
+                min-width: 220px;
+                width: 220px;
+                max-width: 220px;
+            }
+
+            img {
+                display: block;
+                max-width: 215px;
+
+                @include respond-to("sm") {
+                    max-width: 170px;
+                }
+            }
+        }
+    }
+
+    .listViewAlignment {
+        border-top: 1px solid rgba(11, 22, 56, 0.10);
+        padding: 48px 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+
+        @include respond-to("lg") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        @include respond-to("tab") {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+            padding: 36px 0;
+        }
+
+        @include respond-to("sm") {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            padding: 0;
+            border: none;
+            padding: 0 0 28px 0;
+        }
+
+        .items {
+            display: grid;
+            grid-template-columns: 64px 1fr;
+            align-items: center;
+            gap: 48px;
+
+            @include respond-to("lg") {
+                gap: 24px;
+            }
+
+            @include respond-to("sm") {
+                gap: 16px;
+            }
+
+            p {
+                color: var(--Midnight-Navy, #0B1638);
+                font-size: 20px;
+                font-weight: 600;
+                line-height: normal;
+                margin: 0 0 5px 0;
+
+                @include respond-to("sm") {
+                    font-size: 17px;
+                }
+            }
+
+            span {
+                display: block;
+                color: var(--Midnight-Navy, #0B1638);
+                font-size: 16px;
+                opacity: 0.7;
+                font-weight: 400;
+                line-height: normal;
+
+                @include respond-to("sm") {
+                    font-size: 14px;
+                }
+            }
         }
     }
 }

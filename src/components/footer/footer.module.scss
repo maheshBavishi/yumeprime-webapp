@@ -147,12 +147,12 @@
             h2 {
                 color: #F7F4EC;
                 font-size: 44px;
-                font-style: normal;
                 font-weight: 400;
-                line-height: 95%;
-                font-family: "BeVietnam-Regular", sans-serif;
+                line-height: 90%;
                 letter-spacing: -2.2px;
                 margin: 0 0 24px 0;
+                font-family: "BeVietnam-Regular";
+
 
                 @include respond-to("tab") {
                     font-size: 34px;
@@ -306,8 +306,8 @@
         }
 
         @include respond-to("sm") {
-            grid-template-columns: 1fr;
-            gap: 24px;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         .navCol {

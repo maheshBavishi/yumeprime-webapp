@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styles from './footer.module.scss';
 import classNames from 'classnames';
 import Link from 'next/link';
+import Button from '../button';
 
 const Logo = '/assets/logo/footer-logo.svg';
 
@@ -77,9 +78,7 @@ export default function Footer() {
     return (
         <footer className={styles.footer}>
             <div className='container'>
-                {/* Top Section: Brand + Newsletter */}
                 <div className={styles.topSection}>
-                    {/* Left: Brand info & Socials */}
                     <div className={styles.brandCol}>
                         <div className={styles.logo}>
                             <a href="/">
@@ -123,7 +122,7 @@ export default function Footer() {
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
-                            <button type="submit">SUBSCRIBE</button>
+                            <Button text="SUBSCRIBE" />
                         </form>
                     </div>
                 </div>

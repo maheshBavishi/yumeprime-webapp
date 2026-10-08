@@ -3,13 +3,16 @@ import styles from './button.module.scss';
 import classNames from 'classnames';
 import Link from 'next/link';
 
-export default function Button({ text, outline, fill, lightButton, onClick, href, link, target }) {
+export default function Button({ text, outline, fillwhite , outlinePrimary , fill, lightButton, onClick, textwhite, href, link, target }) {
     const destination = href || link;
     const buttonClasses = classNames(
         styles.button,
         outline ? styles.outline : "",
         fill ? styles.fill : "",
-        lightButton ? styles.lightButton : ""
+        lightButton ? styles.lightButton : "",
+        textwhite ? styles.textwhite : "",
+        fillwhite? styles.fillwhite:"",
+        outlinePrimary? styles.outlinePrimary:"",
     );
 
     const innerContent = <span className={styles.btnText}>{text}</span>;

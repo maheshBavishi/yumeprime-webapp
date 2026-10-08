@@ -2,75 +2,82 @@
 @use '../../../scss/breakpoints/breakpoints.scss' as *;
 
 .visionSection {
-    padding: 120px 0;
+    padding: 100px 0 0 0;
 
     @include respond-to("tab") {
-        padding: 70px 0;
+        padding: 60px 0 0 0;
+    }
+
+    @include respond-to("sm") {
+        padding: 48px 0 0 0;
     }
 
     h2 {
         color: var(--Midnight-Navy, #0B1638);
         text-align: center;
         font-size: 96px;
-        font-weight: 400;
+        margin: 0 0 24px 0;
+        font-weight: 500;
         line-height: 90%;
-        letter-spacing: -4.8px;
-        font-family: "BeVietnam-Regular", sans-serif;
+        font-family: "Magnetik-Medium";
 
         @include respond-to("lg") {
             font-size: 72px;
-            letter-spacing: -3.6px;
         }
 
         @include respond-to("tab") {
             font-size: 48px;
-            letter-spacing: -2.4px;
+            margin-bottom: 20px;
         }
 
         @include respond-to("sm") {
             font-size: 34px;
-            letter-spacing: -1.7px;
-        }
-
-        span {
-            font-style: italic;
-            font-family: "BeVietnam-ThinItalic", sans-serif;
-            font-weight: 250;
-            line-height: 90%;
-            letter-spacing: -4.8px;
-
-            @include respond-to("lg") {
-                letter-spacing: -3.6px;
-            }
-
-            @include respond-to("tab") {
-                letter-spacing: -2.4px;
-            }
-
-            @include respond-to("sm") {
-                letter-spacing: -1.7px;
-            }
+            margin-bottom: 16px;
         }
     }
 
-    .center {
-        padding: 40px 0 0 0;
-        display: flex;
-        justify-content: center;
-        user-select: none;
+    p {
+        color: var(--Midnight-Navy, #0B1638);
+        text-align: center;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: normal;
+        max-width: 331px;
+        margin: 0 auto 33px auto;
 
         @include respond-to("sm") {
-            padding-top: 28px;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+    }
 
-            > div {
+    .btnAlignment {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        padding: 0 0 32px 0;
+        gap: 8px;
+
+        @include respond-to("sm") {
+            flex-direction: column;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            padding-bottom: 24px;
+
+            button {
                 width: 100%;
-                max-width: 320px;
-
-                button {
-                    width: 100%;
-                    justify-content: center;
-                }
+                justify-content: center;
             }
         }
     }
-}
+
+    .imageAlignment {
+        img {
+            display: block;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    }
+}

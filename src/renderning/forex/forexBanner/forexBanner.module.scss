@@ -1,0 +1,46 @@
+@use '../../../scss/main.scss' as *;
+@use '../../../scss/breakpoints/breakpoints.scss' as *;
+
+.forexsection {
+    padding: 170px 134px 170px 64px;
+
+    .contentAlignment {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .img {
+            max-width: 880px;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        h1 {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 104px;
+            font-style: normal;
+            font-weight: 500;
+            font-family: "Magnetik-Medium";
+            line-height: 90%;
+            margin: 0 0 24px 0;
+            max-width: 583px;
+        }
+
+        p {
+            color: var(--Midnight-Navy, #0B1638);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: normal;
+            margin: 0 0 48px 0;
+        }
+
+        .buttonAlignment {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+}

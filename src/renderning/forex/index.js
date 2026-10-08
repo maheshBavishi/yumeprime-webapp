@@ -7,6 +7,8 @@ import InstrumentsPricing from '@/components/instrumentsPricing';
 import WhatIsTrading from '@/components/whatIsTrading';
 import React from 'react';
 import VisionSection from '../home/visionSection';
+import ForexBanner from './forexBanner';
+import CardSection from '../home/cardSection';
 
 const bannerData = {
     title: (
@@ -21,21 +23,22 @@ const bannerData = {
 };
 
 const contentSectionData = {
-    title: (
-        <>
-            <span> Forex </span> TRADING OVERVIEW
-        </>
-    ),
-    description: (
-        <>
-            The <span> forex market </span> is the world’s most liquid financial market, trading trillions of dollars daily across overlapping global sessions. Yume Prime routes orders through a direct execution model to deep liquidity, so you trade the market price not an adjusted one.
-        </>
-    ),
+    badgeText: 'OVERVIEW',
+    description: 'The forex market is the most liquid financial market, trading trillions daily across global sessions. Yume Prime uses direct execution to deep liquidity, so you trade the real market price.',
+    stats: [
+        { value: '$9.6T+', label: 'Daily FX Trading Volume' },
+        { value: '89%', label: 'Trades Involve USD' },
+        { value: '$3T+', label: 'Daily Spot FX Volume' },
+    ],
 };
 
 const whatIsTradingData = {
-    title: "What is Forex trading?",
-    image: '/assets/images/forex-trading.png',
+    title: (
+        <>
+            What is <br /> Forex trading?
+        </>
+    ),
+    image: '/assets/images/trading-vec.png',
     description: (
         <>
             Forex is the simultaneous exchange of one currency for another, with the
@@ -51,46 +54,53 @@ const whatIsTradingData = {
 const commonCardData = {
     title: (
         <>
-            Why Trade <br />Forex with <span> Yume Prime. </span>
+            Why Trade <br /> with Yume Prime.
         </>
     ),
     cards: [
         {
             id: 1,
-            image: '/assets/images/card1.png',
-            title: '55+ Currency Pairs',
+            title: (
+                <>
+                    Forex, Metals,Indices, <br /> Commodities and stock CFD
+                </>
+            ),
             description: 'Majors, minors, and exotics, all from a single account.',
+            image: '/assets/images/FlexibleLeverage.png',
         },
         {
             id: 2,
-            image: '/assets/images/card2.png',
             title: 'Spreads From 0.0 Pips',
             description: 'Raw pricing available on our Pro account, with no hidden markups.',
+            image: '/assets/images/spreads-card.png',
         },
         {
             id: 3,
-            image: '/assets/images/card3.png',
             title: 'STP/ECN Execution',
             description: 'Orders routed directly to liquidity, with no dealing-desk conflict.',
+            image: '/assets/images/Execution.png',
         },
         {
             id: 4,
-            image: '/assets/images/card4.png',
             title: 'Long & Short Trading',
-            description: 'Profit from both rising and falling markets.',
+            description: 'Average order execution from lowest ms across deep liquidity pools, with no dealing-desk intervention on Plus and Pro accounts.',
+            image: '/assets/images/ShortTrading.png',
         },
         {
             id: 5,
-            image: '/assets/images/card5.png',
-            title: '24/5 Global Sessions',
+            title: (
+                <>
+                    Execution <br /> Built for Precision
+                </>
+            ),
             description: 'Trade continuously from the Sydney open to the New York close.',
+            image: '/assets/images/Precision.png',
         },
         {
             id: 6,
-
-            image: '/assets/images/card6.png',
             title: 'Flexible Leverage',
             description: 'Up to [1:1000] on major pairs, depending on account type and jurisdiction.',
+            image: '/assets/images/FlexibleLeverage.png',
         },
     ],
     bottomText: "Ready to trade Forex with transparent, raw pricing?",
@@ -149,16 +159,11 @@ const instrumentsPricingData = {
 export default function Forex() {
     return (
         <div>
-            <CommonBanner
-                title={bannerData.title}
-                description={bannerData.description}
-                image={bannerData.image}
-                primaryBtnText={bannerData.primaryBtnText}
-                secondaryBtnText={bannerData.secondaryBtnText}
-            />
+            <ForexBanner />
             <ContentSection
-                title={contentSectionData.title}
+                badgeText={contentSectionData.badgeText}
                 description={contentSectionData.description}
+                stats={contentSectionData.stats}
             />
             <WhatIsTrading
                 title={whatIsTradingData.title}
@@ -166,8 +171,6 @@ export default function Forex() {
                 description={whatIsTradingData.description}
                 primaryBtnText={whatIsTradingData.primaryBtnText}
                 secondaryBtnText={whatIsTradingData.secondaryBtnText}
-                titleMaxWidth={whatIsTradingData.titleMaxWidth}
-                imageMaxWidth={whatIsTradingData.imageMaxWidth}
             />
             <CommonCardSection
                 title={commonCardData.title}
@@ -190,7 +193,7 @@ export default function Forex() {
                 rows={instrumentsPricingData.rows}
                 noteText={instrumentsPricingData.noteText}
             />
-            <HowtoStart />
+            <CardSection />
             <VisionSection />
 
         </div>
